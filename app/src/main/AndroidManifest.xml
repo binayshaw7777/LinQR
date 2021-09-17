@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.geeeky.linqr">
+    <!-- Permission for camera -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/small_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/small_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LinQR">
+        <activity
+            android:name=".About_us"
+            android:exported="true" />
+        <activity
+            android:name=".Display_user"
+            android:exported="true" />
+        <activity
+            android:name=".Scan_User_QR"
+            android:exported="true" />
+        <activity
+            android:name=".User_QR"
+            android:exported="true" />
+        <activity
+            android:name=".update"
+            android:exported="true" />
+        <activity
+            android:name=".Socials"
+            android:exported="true" />
+        <activity
+            android:name=".User_Details"
+            android:exported="true" />
+        <activity
+            android:name=".ss"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".GenQR"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

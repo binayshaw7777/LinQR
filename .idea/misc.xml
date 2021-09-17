@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/drawable/button_proceed.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/drawable/button_proceed_gray.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/drawable/button_white_proceed.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/drawable/fill_button.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/drawable/fill_button_gray.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_about_us.xml" value="0.22" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_display_user.xml" value="0.25" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_gen_qr.xml" value="0.22" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_main.xml" value="0.1953125" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_scan_user_qr.xml" value="0.209375" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_socials.xml" value="0.25" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_ss.xml" value="0.33" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_update.xml" value="0.22" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_user_details.xml" value="0.25" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_user_qr.xml" value="0.25" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/menu/popup_menu.xml" value="0.209375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
