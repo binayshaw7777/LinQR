@@ -52,8 +52,19 @@ public class User_QR extends AppCompatActivity {
 
         String name=sp.getString("saved_name", "");
         String num=sp.getString("saved_num", "");
+        String email=sp.getString("saved_email", "");
+        String Insta=sp.getString("saved_insta", "");
+        String Linkedin=sp.getString("saved_linkedin", "");
+        if(Linkedin.isEmpty()){
+            Linkedin="NULL";
+        }
+        if(Insta.isEmpty()){
+            Insta="NULL";
+        }
 
-        String qr = num+name;
+      //  String qr = num+name;
+      //  String qr = name+":"+num+":"+email+":"+Twitter+":"+Linkedin;
+        String qr = name+":"+num+":"+email+":"+Insta+":"+Linkedin;
 
         WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
 

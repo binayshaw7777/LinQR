@@ -17,14 +17,12 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.hbb20.CountryCodePicker;
 
 public class User_Details extends AppCompatActivity {
 
     Button proceed;
     CheckBox remember;
-    EditText Name, Phone;
-    CountryCodePicker ccp;
+    EditText Name, Phone, Insta, Email, Linkedin;
     SharedPreferences sp;
 
     @Override
@@ -37,8 +35,10 @@ public class User_Details extends AppCompatActivity {
         proceed = findViewById(R.id.next);
         Name = findViewById(R.id.editTextTextPersonName);
         Phone = findViewById(R.id.editTextPhone);
-        ccp = findViewById(R.id.countryCodePicker);
         remember = findViewById(R.id.checkBox);
+        Insta = findViewById(R.id.insta);
+        Email = findViewById(R.id.email);
+        Linkedin = findViewById(R.id.linked);
 
         sp = getSharedPreferences("user_details", Context.MODE_PRIVATE);
 
@@ -54,7 +54,7 @@ public class User_Details extends AppCompatActivity {
         proceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Name.length()==0 || Phone.length()<10)
+                if(Name.length()==0 || Phone.length()<10 || Email.length()<10)
                 {
                     Toast.makeText(User_Details.this, "Enter your Details!", Toast.LENGTH_SHORT).show();
                 }
@@ -63,9 +63,15 @@ public class User_Details extends AppCompatActivity {
                     String txt_name = Name.getText().toString();
                     //String txt_num ="+"+ccp.getSelectedCountryCode()+Phone.getText().toString();
                    String txt_num = Phone.getText().toString();
+                   String txt_email = Email.getText().toString();
+                   String txt_LI = Linkedin.getText().toString().toLowerCase();
+                   String txt_Insta = Insta.getText().toString().toLowerCase();
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("saved_name", txt_name);
                     editor.putString("saved_num", txt_num);
+                    editor.putString("saved_email", txt_email);
+                    editor.putString("saved_linkedin", txt_LI);
+                    editor.putString("saved_insta", txt_Insta);
                     editor.commit();
                     Toast.makeText(User_Details.this, "Saved Successfully!", Toast.LENGTH_SHORT).show();
                    // String phoneNumber = "+"+ccp.getSelectedCountryCode() +Phone.getText().toString();

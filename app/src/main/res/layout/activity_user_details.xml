@@ -30,14 +30,14 @@
         android:layout_width="270dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/fill_button_gray"
         android:ems="10"
-        android:imeOptions="actionDone"
         android:fontFamily="@font/montserrat"
         android:gravity="center_horizontal|center_vertical"
         android:hint="Enter Full Name"
+        android:imeOptions="actionDone"
         android:inputType="text"
         android:text=""
         android:textAlignment="center"
@@ -47,36 +47,78 @@
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-    <com.hbb20.CountryCodePicker
-        android:id="@+id/countryCodePicker"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="28dp"
-        android:gravity="center"
-        app:ccpDialog_textColor="@color/text"
-        app:ccp_contentColor="@color/text"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/fill_button_gray"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:hint="Enter Email ID"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
+        app:layout_constraintStart_toStartOf="@+id/editTextPhone"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
+    <EditText
+        android:id="@+id/linked"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/fill_button_gray"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:hint="Enter LinkedIn ID @"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        app:layout_constraintEnd_toEndOf="@+id/insta"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/insta"
+        app:layout_constraintTop_toBottomOf="@+id/insta" />
+
+    <EditText
+        android:id="@+id/insta"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/fill_button_gray"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:hint="Enter Instagram ID @"
+        android:text=""
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="270dp"
         android:layout_height="50dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/fill_button_gray"
         android:ems="10"
-        android:gravity="center_vertical|center_horizontal"
         android:fontFamily="@font/montserrat"
+        android:gravity="center_vertical|center_horizontal"
         android:hint="Enter Phone Number"
         android:inputType="phone"
         android:textAlignment="center"
         android:textColor="@color/text"
         android:textColorHint="@color/text"
-        app:layout_constraintEnd_toEndOf="@+id/countryCodePicker"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="@+id/countryCodePicker"
-        app:layout_constraintTop_toBottomOf="@+id/countryCodePicker" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <Button
         android:id="@+id/next"
@@ -91,10 +133,10 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/checkBox"
-        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="@+id/checkBox"
         app:layout_constraintTop_toBottomOf="@+id/checkBox"
-        app:layout_constraintVertical_bias="0.127" />
+        app:layout_constraintVertical_bias="0.086" />
 
     <TextView
         android:id="@+id/textView5"
@@ -116,15 +158,15 @@
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="12dp"
         android:buttonTint="@color/text"
         android:gravity="center"
         android:text="Remember me"
         android:textColor="@color/text"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
+        app:layout_constraintEnd_toEndOf="@+id/linked"
         app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="@+id/editTextPhone"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone">
+        app:layout_constraintStart_toStartOf="@+id/linked"
+        app:layout_constraintTop_toBottomOf="@+id/linked">
 
     </CheckBox>
 
