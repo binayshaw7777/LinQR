@@ -48,7 +48,7 @@ public class About_us extends AppCompatActivity {
             Back.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent  = new Intent(About_us.this, GenQR.class);
+                    Intent intent  = new Intent(About_us.this, HomeScreen.class);
                     startActivity(intent);
                     finishAffinity();
                 }

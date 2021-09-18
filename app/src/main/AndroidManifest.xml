@@ -18,25 +18,19 @@
             android:name=".About_us"
             android:exported="true" />
         <activity
-            android:name=".Display_user"
+            android:name=".ResultDisplay"
             android:exported="true" />
         <activity
-            android:name=".Scan_User_QR"
+            android:name=".Scanner"
             android:exported="true" />
         <activity
-            android:name=".User_QR"
+            android:name=".GenerateQR"
             android:exported="true" />
         <activity
-            android:name=".update"
+            android:name=".Login"
             android:exported="true" />
         <activity
-            android:name=".Socials"
-            android:exported="true" />
-        <activity
-            android:name=".User_Details"
-            android:exported="true" />
-        <activity
-            android:name=".ss"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,7 +39,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GenQR"
+            android:name=".HomeScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

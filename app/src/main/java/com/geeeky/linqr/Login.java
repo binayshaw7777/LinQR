@@ -8,7 +8,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -18,7 +17,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class User_Details extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     Button proceed;
     CheckBox remember;
@@ -45,7 +44,7 @@ public class User_Details extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
         String checkbox = preferences.getString("remember","");
         if (checkbox.equals("true")){
-            Intent intent = new Intent(User_Details.this,GenQR.class);
+            Intent intent = new Intent(Login.this, HomeScreen.class);
             startActivity(intent);
         }else if (checkbox.equals("false")){
             Toast.makeText(this, "Please Enter Details", Toast.LENGTH_SHORT).show();
@@ -56,7 +55,7 @@ public class User_Details extends AppCompatActivity {
             public void onClick(View v) {
                 if(Name.length()==0 || Phone.length()<10 || Email.length()<10)
                 {
-                    Toast.makeText(User_Details.this, "Enter your Details!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Enter your Details!", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     //String Phone_Extra ="+"+ccp.getSelectedCountryCode()+Phone.getText().toString();
@@ -73,9 +72,9 @@ public class User_Details extends AppCompatActivity {
                     editor.putString("saved_linkedin", txt_LI);
                     editor.putString("saved_insta", txt_Insta);
                     editor.commit();
-                    Toast.makeText(User_Details.this, "Saved Successfully!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Saved Successfully!", Toast.LENGTH_SHORT).show();
                    // String phoneNumber = "+"+ccp.getSelectedCountryCode() +Phone.getText().toString();
-                    Intent intent = new Intent(User_Details.this,GenQR.class);
+                    Intent intent = new Intent(Login.this, HomeScreen.class);
                //     intent.putExtra("phoneNo",phoneNumber);
                     startActivity(intent);
                     finish();
@@ -121,7 +120,7 @@ public class User_Details extends AppCompatActivity {
         alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(User_Details.this, "Exit cancelled", Toast.LENGTH_LONG).show();
+                Toast.makeText(Login.this, "Exit cancelled", Toast.LENGTH_LONG).show();
             }
         });
         AlertDialog alertDialog=alertDialogBuilder.create();

@@ -13,12 +13,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class GenQR extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
+public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     TextView Name, Num;
     CardView userQR, SocialQR, ScanUser;
@@ -50,7 +49,7 @@ public class GenQR extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         ScanUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(GenQR.this, Scan_User_QR.class);
+                Intent intent = new Intent(HomeScreen.this, Scanner.class);
                 startActivity(intent);
                 finish();
             }
@@ -72,7 +71,7 @@ public class GenQR extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         userQR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(GenQR.this, User_QR.class);
+                Intent intent = new Intent(HomeScreen.this, GenerateQR.class);
                 startActivity(intent);
                 finish();
             }
@@ -103,7 +102,7 @@ public class GenQR extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(GenQR.this, "Exit cancelled", Toast.LENGTH_LONG).show();
+                Toast.makeText(HomeScreen.this, "Exit cancelled", Toast.LENGTH_LONG).show();
             }
         });
         AlertDialog alertDialog=alertDialogBuilder.create();
@@ -124,13 +123,13 @@ public class GenQR extends AppCompatActivity implements PopupMenu.OnMenuItemClic
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("remember", "false");
                 editor.apply();
-                Intent b = new Intent(GenQR.this, User_Details.class);
+                Intent b = new Intent(HomeScreen.this, Login.class);
                 startActivity(b);
-                finish();
+                finishAffinity();
                 break;
 
             case R.id.About_us:
-                Intent a = new Intent(GenQR.this, About_us.class);
+                Intent a = new Intent(HomeScreen.this, About_us.class);
                 startActivity(a);
                 finish();
                 break;

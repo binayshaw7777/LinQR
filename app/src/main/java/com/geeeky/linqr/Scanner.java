@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.google.zxing.Result;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-public class Scan_User_QR extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+public class Scanner extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     private  static final int REQUEST_CAMERA = 1;
     private ZXingScannerView ScannerView;
@@ -34,7 +34,7 @@ public class Scan_User_QR extends AppCompatActivity implements ZXingScannerView.
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
             if(checkPermission()){
-                Toast.makeText(Scan_User_QR.this, "Permission Granted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Scanner.this, "Permission Granted", Toast.LENGTH_SHORT).show();
             }
             else{
                 requestPermission(new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA);
@@ -48,7 +48,7 @@ public class Scan_User_QR extends AppCompatActivity implements ZXingScannerView.
 
     private void requestPermission(String[] strings, int requestCamera)
     {
-        ActivityCompat.requestPermissions(Scan_User_QR.this, new String[] {Manifest.permission.CAMERA}, REQUEST_CAMERA);
+        ActivityCompat.requestPermissions(Scanner.this, new String[] {Manifest.permission.CAMERA}, REQUEST_CAMERA);
     }
 
     public void onRequestPermissionResult(int requestCode, String permissions[], int[] grantResult){
@@ -57,10 +57,10 @@ public class Scan_User_QR extends AppCompatActivity implements ZXingScannerView.
                 if(grantResult.length > 0){
                     boolean cameraAccept = grantResult[0] == PackageManager.PERMISSION_GRANTED;
                     if(cameraAccept){
-                        Toast.makeText(Scan_User_QR.this, "Permission Granted by the User", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Scanner.this, "Permission Granted by the User", Toast.LENGTH_LONG).show();
                     }
                     else{
-                        Toast.makeText(Scan_User_QR.this, "Permission Denied", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Scanner.this, "Permission Denied", Toast.LENGTH_LONG).show();
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                             if(shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)){
                                 showMessageOnCancel("Allow Camera Permissions",
@@ -87,7 +87,7 @@ public class Scan_User_QR extends AppCompatActivity implements ZXingScannerView.
         if (currentapiVersion >= Build.VERSION_CODES.M) {
             if (checkPermission()) {
                 if (ScannerView == null) {
-                    ScannerView = new ZXingScannerView(Scan_User_QR.this);
+                    ScannerView = new ZXingScannerView(Scanner.this);
                     setContentView(ScannerView);
                 }
                 ScannerView.setResultHandler(this);
@@ -104,7 +104,7 @@ public class Scan_User_QR extends AppCompatActivity implements ZXingScannerView.
     }
 
     private void showMessageOnCancel(String message, DialogInterface.OnClickListener okListener){
-        new AlertDialog.Builder(Scan_User_QR.this)
+        new AlertDialog.Builder(Scanner.this)
                 .setMessage(message)
                 .setPositiveButton("Ok", okListener)
                 .setNegativeButton("Cancel", null)
@@ -115,7 +115,7 @@ public class Scan_User_QR extends AppCompatActivity implements ZXingScannerView.
     @Override
     public void handleResult(Result rawResult) {
         final String Rawresult = rawResult.getText();
-        Intent i = new Intent(Scan_User_QR.this, Display_user.class);
+        Intent i = new Intent(Scanner.this, ResultDisplay.class);
         i.putExtra("decoded", Rawresult);
         startActivity(i);
     }
@@ -123,7 +123,7 @@ public class Scan_User_QR extends AppCompatActivity implements ZXingScannerView.
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent x = new Intent(Scan_User_QR.this, GenQR.class);
+        Intent x = new Intent(Scanner.this, HomeScreen.class);
         startActivity(x);
         finishAffinity();
     }

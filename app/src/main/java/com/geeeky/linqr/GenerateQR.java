@@ -7,29 +7,22 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Point;
-import android.hardware.input.InputManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
-import com.google.zxing.common.BitMatrix;
-import com.google.zxing.qrcode.encoder.QRCode;
-import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 
-public class User_QR extends AppCompatActivity {
+public class GenerateQR extends AppCompatActivity {
 
     Button back;
     ImageView imageView;
@@ -106,7 +99,7 @@ public class User_QR extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(User_QR.this, GenQR.class);
+                Intent intent = new Intent(GenerateQR.this, HomeScreen.class);
                 startActivity(intent);
                 finish();
             }
@@ -117,7 +110,7 @@ public class User_QR extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent x = new Intent(User_QR.this, GenQR.class);
+        Intent x = new Intent(GenerateQR.this, HomeScreen.class);
         startActivity(x);
         finishAffinity();
     }

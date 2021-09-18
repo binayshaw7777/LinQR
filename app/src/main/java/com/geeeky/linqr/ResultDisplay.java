@@ -2,9 +2,7 @@ package com.geeeky.linqr;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -12,9 +10,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class Display_user extends AppCompatActivity {
+public class ResultDisplay extends AppCompatActivity {
 
     TextView Name_Dis, Number_Dis, Email_Dis, Insta_Dis, LinkedIn_Dis;
     Button toHome, Rescan, Add, Add_insta, Add_LinkedIn;
@@ -97,7 +94,7 @@ public class Display_user extends AppCompatActivity {
         toHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent th = new Intent(Display_user.this, GenQR.class);
+                Intent th = new Intent(ResultDisplay.this, HomeScreen.class);
                 startActivity(th);
                 finish();
             }
@@ -106,7 +103,7 @@ public class Display_user extends AppCompatActivity {
         Rescan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent resc = new Intent(Display_user.this, Scan_User_QR.class);
+                Intent resc = new Intent(ResultDisplay.this, Scanner.class);
                 startActivity(resc);
                 finishAffinity();
             }

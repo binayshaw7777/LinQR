@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 
-public class ss extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class ss extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i=new Intent(ss.this, User_Details.class);
+                Intent i=new Intent(SplashScreen.this, Login.class);
                 //Intent is used to switch from one activity to another.
 
                 startActivity(i);
