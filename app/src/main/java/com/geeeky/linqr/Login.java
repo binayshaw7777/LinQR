@@ -58,9 +58,7 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "Enter your Details!", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    //String Phone_Extra ="+"+ccp.getSelectedCountryCode()+Phone.getText().toString();
                     String txt_name = Name.getText().toString();
-                    //String txt_num ="+"+ccp.getSelectedCountryCode()+Phone.getText().toString();
                    String txt_num = Phone.getText().toString();
                    String txt_email = Email.getText().toString();
                    String txt_LI = Linkedin.getText().toString().toLowerCase();
@@ -73,9 +71,7 @@ public class Login extends AppCompatActivity {
                     editor.putString("saved_insta", txt_Insta);
                     editor.commit();
                     Toast.makeText(Login.this, "Saved Successfully!", Toast.LENGTH_SHORT).show();
-                   // String phoneNumber = "+"+ccp.getSelectedCountryCode() +Phone.getText().toString();
                     Intent intent = new Intent(Login.this, HomeScreen.class);
-               //     intent.putExtra("phoneNo",phoneNumber);
                     startActivity(intent);
                     finish();
                 }
@@ -87,14 +83,12 @@ public class Login extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
                 if (buttonView.isChecked()){
-
                     SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("remember","true");
                     editor.apply();
                 }
                 else if (!buttonView.isChecked()){
-
                     SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("remember","false");
@@ -102,11 +96,9 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
-
     }
     public void onBackPressed(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-
         alertDialogBuilder.setTitle("Confirm Exit");
         alertDialogBuilder.setIcon(R.drawable.logo);
         alertDialogBuilder.setMessage("Do you really want to exit?");
@@ -126,4 +118,4 @@ public class Login extends AppCompatActivity {
         AlertDialog alertDialog=alertDialogBuilder.create();
         alertDialog.show();
     }
-    }
+}

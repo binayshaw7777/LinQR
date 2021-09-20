@@ -20,8 +20,8 @@ import android.widget.Toast;
 public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     TextView Name, Num;
-    CardView userQR, SocialQR, ScanUser;
-    Button update_pro;
+    CardView userQR, ScanUser;
+    Button Pick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +34,9 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
 
         Name = findViewById(R.id.name);
         Num = findViewById(R.id.num);
-     //   update_pro = findViewById(R.id.settings);
         userQR = findViewById(R.id.user_qr);
-      //  SocialQR = findViewById(R.id.social_qr);
         ScanUser = findViewById(R.id.scan_user);
+        Pick = findViewById(R.id.pick);
 
 
         String name=sp.getString("saved_name", "");
@@ -55,18 +54,14 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
             }
         });
 
-     /*   update_pro.setOnClickListener(new View.OnClickListener() {
+        Pick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("remember","false");
-                editor.apply();
-                Intent intent1 = new Intent(GenQR.this, User_Details.class);
-                startActivity(intent1);
+                Intent intent = new Intent(HomeScreen.this, Scan_Gallery.class);
+                startActivity(intent);
                 finish();
             }
-        });*/
+        });
 
         userQR.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,15 +71,6 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
                 finish();
             }
         });
-
-        /*SocialQR.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(GenQR.this, update.class);
-                startActivity(intent);
-                finish();
-            }
-        });*/
     }
     public void onBackPressed(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);

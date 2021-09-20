@@ -18,13 +18,8 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
                 Intent i=new Intent(SplashScreen.this, Login.class);
-                //Intent is used to switch from one activity to another.
-
                 startActivity(i);
-                //invoke the SecondActivity.
-
                 finish();
-                //the current activity will get finished.
             }
         }, 3000);
         setContentView(R.layout.activity_ss);

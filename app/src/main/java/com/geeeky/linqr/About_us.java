@@ -35,7 +35,6 @@ public class About_us extends AppCompatActivity {
                 Toast.makeText(About_us.this, "Not connected to internet!", Toast.LENGTH_SHORT).show();
             }
 
-
             Linktree.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -53,7 +52,6 @@ public class About_us extends AppCompatActivity {
                     finishAffinity();
                 }
             });
-
         }
         private void gotoUrl(String s) {
             Uri uri = Uri.parse(s);

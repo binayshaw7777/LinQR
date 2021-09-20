@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LinQR">
         <activity
+            android:name=".Scan_Gallery"
+            android:exported="true" />
+        <activity
             android:name=".About_us"
             android:exported="true" />
         <activity

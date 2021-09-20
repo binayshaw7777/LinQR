@@ -37,11 +37,7 @@ public class ResultDisplay extends AppCompatActivity {
         Intent newInt = getIntent();
         String num = newInt.getExtras().getString("decoded");
 
-      //  String Data = num;
-
-   //     String[] split = num.split(":");
         String[] split = num.split(":");
-      //  for(String:num)
         String name_display = split[0];
         String number_display = split[1];
         String email_display = split[2];
@@ -51,15 +47,10 @@ public class ResultDisplay extends AppCompatActivity {
         String Insta_To_Site = "https://www.instagram.com/"+insta_display;
         String LinkedIn_To_Site = "https://www.linkedin.com/in/"+linkedin_display;
 
-
-       // String number_display =Data.substring(0,10);
-       // String name_display = Data.substring(10);
-
         Name_Dis.setText("Name: "+name_display);
         Number_Dis.setText("Phone: "+number_display);
         Email_Dis.setText("Email: "+email_display);
 
-       // if(twitter.isEmpty()){
         if(insta_display.equals("NULL")){ //insta_displa==+
             Insta_Dis.setText("The user has not added Instagram");
             Add_insta.setText("Not Available!");
@@ -69,13 +60,11 @@ public class ResultDisplay extends AppCompatActivity {
             Add_insta.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                 //   gotoUrl("https://www.twitter.com/"+twitter_display);
                     gotoUrl(Insta_To_Site);
                 }
             });
         }
 
-      //  if(linkedin.isEmpty()){
         if(linkedin_display.equals("NULL")){
             LinkedIn_Dis.setText("The user has not added LinkedIn");
             Add_LinkedIn.setText("Not Available!");
@@ -85,7 +74,6 @@ public class ResultDisplay extends AppCompatActivity {
             Add_LinkedIn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //  gotoUrl("https://www.linkedin.com/in/"+linkedin_display);
                     gotoUrl(LinkedIn_To_Site);
                 }
             });

@@ -48,6 +48,7 @@ public class GenerateQR extends AppCompatActivity {
         String email=sp.getString("saved_email", "");
         String Insta=sp.getString("saved_insta", "");
         String Linkedin=sp.getString("saved_linkedin", "");
+
         if(Linkedin.isEmpty()){
             Linkedin="NULL";
         }
@@ -55,8 +56,6 @@ public class GenerateQR extends AppCompatActivity {
             Insta="NULL";
         }
 
-      //  String qr = num+name;
-      //  String qr = name+":"+num+":"+email+":"+Twitter+":"+Linkedin;
         String qr = name+":"+num+":"+email+":"+Insta+":"+Linkedin;
 
         WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
@@ -93,9 +92,6 @@ public class GenerateQR extends AppCompatActivity {
             Log.e("Tag", e.toString());
         }
 
-
-
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,8 +100,6 @@ public class GenerateQR extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
     @Override
     public void onBackPressed() {

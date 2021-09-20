@@ -11,8 +11,12 @@
         <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_about_us.xml" value="0.22" />
         <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_display_user.xml" value="0.25" />
         <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_gen_qr.xml" value="0.22" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_intro.xml" value="0.209375" />
         <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_main.xml" value="0.1953125" />
-        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_scan_user_qr.xml" value="0.209375" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_onboarding_screen.xml" value="0.209375" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_scan_gallery.xml" value="0.209375" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_scan_options.xml" value="0.25" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_scan_user_qr.xml" value="0.2" />
         <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_socials.xml" value="0.25" />
         <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_ss.xml" value="0.33" />
         <entry key="..\:/Users/binay/AndroidStudioProjects/LinQR/app/src/main/res/layout/activity_update.xml" value="0.22" />
