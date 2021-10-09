@@ -57,6 +57,13 @@ public class GenerateQR extends AppCompatActivity {
         }
 
         String qr = name+":"+num+":"+email+":"+Insta+":"+Linkedin;
+        String fin = "";
+
+        char[] ch = qr.toCharArray();
+        for(char c : ch){
+            c+=5;
+            fin+=c;
+        }
 
         WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
 
@@ -79,7 +86,7 @@ public class GenerateQR extends AppCompatActivity {
 
         // setting this dimensions inside our qr code
         // encoder to generate our qr code.
-        qrgEncoder = new QRGEncoder(qr, null, QRGContents.Type.TEXT, dimen);
+        qrgEncoder = new QRGEncoder(fin, null, QRGContents.Type.TEXT, dimen);
         try {
             // getting our qrcode in the form of bitmap.
             bitmap = qrgEncoder.encodeAsBitmap();

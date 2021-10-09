@@ -36,8 +36,14 @@ public class ResultDisplay extends AppCompatActivity {
 
         Intent newInt = getIntent();
         String num = newInt.getExtras().getString("decoded");
+        char[] dec = num.toCharArray();
+        String decrypt = "";
+        for(char c : dec){
+            c-=5;
+            decrypt+=c;
+        }
 
-        String[] split = num.split(":");
+        String[] split = decrypt.split(":");
         String name_display = split[0];
         String number_display = split[1];
         String email_display = split[2];
