@@ -40,12 +40,19 @@ public class GenerateQR extends AppCompatActivity {
         back = findViewById(R.id.button);
 
         SharedPreferences sp = getApplicationContext().getSharedPreferences("user_details", Context.MODE_PRIVATE);
+        SharedPreferences sp1 = getApplicationContext().getSharedPreferences("other_details", Context.MODE_PRIVATE);
 
         String name=sp.getString("saved_name", "");
         String num=sp.getString("saved_num", "");
         String email=sp.getString("saved_email", "");
-        String Insta=sp.getString("saved_insta", "");
-        String Linkedin=sp.getString("saved_linkedin", "");
+        String Insta=sp1.getString("saved_Insta", "");
+        String Linkedin=sp1.getString("saved_Li", "");
+        String Dis=sp1.getString("saved_Dis", "");
+        String Git=sp1.getString("saved_Git", "");
+        String Twit=sp1.getString("saved_Twit", "");
+        String Fb=sp1.getString("saved_Fb", "");
+
+
 
         if(Linkedin.isEmpty()){
             Linkedin="NULL";
@@ -53,8 +60,20 @@ public class GenerateQR extends AppCompatActivity {
         if(Insta.isEmpty()){
             Insta="NULL";
         }
+        if(Dis.isEmpty()){
+            Dis="NULL";
+        }
+        if(Twit.isEmpty()){
+            Twit="NULL";
+        }
+        if(Fb.isEmpty()){
+            Fb="NULL";
+        }
+        if(Git.isEmpty()){
+            Git="NULL";
+        }
 
-        String qr = name+":"+num+":"+email+":"+Insta+":"+Linkedin;
+        String qr = name+":"+num+":"+email+":"+Insta+":"+Linkedin+":"+Dis+":"+Twit+":"+Fb+":"+Git;
         String fin = "";
 
         char[] ch = qr.toCharArray();

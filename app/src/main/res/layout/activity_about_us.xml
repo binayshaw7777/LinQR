@@ -12,7 +12,7 @@
         android:layout_width="124dp"
         android:layout_height="106dp"
 
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,16 +48,15 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="314dp"
-        android:layout_height="271dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="315dp"
+        android:layout_height="253dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center_horizontal"
-        android:text="Geeky Musketeers is a team of 3 Full Stack Developers pursuing CSE who are passionate in Developing and Designing \n\n Developed and Designed by: \n\nBinay Shaw\n\n\n\nThank you for Downloading our App"
+        android:text="Geeky Musketeers is a team of 3 Full Stack Developers pursuing CSE who are passionate in Developing and Designing \n\n Developed and Designed by: \n\nBinay Shaw\n\n\nThank you for Downloading our App"
         android:textColor="@color/white"
         android:textSize="17dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/imageView3">
 

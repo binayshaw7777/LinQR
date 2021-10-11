@@ -21,7 +21,7 @@ public class Login extends AppCompatActivity {
 
     Button proceed;
     CheckBox remember;
-    EditText Name, Phone, Insta, Email, Linkedin;
+    EditText Name, Phone, Email;
     SharedPreferences sp;
 
     @Override
@@ -35,18 +35,17 @@ public class Login extends AppCompatActivity {
         Name = findViewById(R.id.editTextTextPersonName);
         Phone = findViewById(R.id.editTextPhone);
         remember = findViewById(R.id.checkBox);
-        Insta = findViewById(R.id.insta);
         Email = findViewById(R.id.email);
-        Linkedin = findViewById(R.id.linked);
 
         sp = getSharedPreferences("user_details", Context.MODE_PRIVATE);
 
         SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
         String checkbox = preferences.getString("remember","");
         if (checkbox.equals("true")){
-            Intent intent = new Intent(Login.this, HomeScreen.class);
+            Intent intent = new Intent(Login.this, Other_Details.class);
             startActivity(intent);
-        }else if (checkbox.equals("false")){
+        }
+        else if(checkbox.equals("false")){
             Toast.makeText(this, "Please Enter Details", Toast.LENGTH_SHORT).show();
         }
 
@@ -59,19 +58,15 @@ public class Login extends AppCompatActivity {
                 }
                 else{
                     String txt_name = Name.getText().toString();
-                   String txt_num = Phone.getText().toString();
-                   String txt_email = Email.getText().toString();
-                   String txt_LI = Linkedin.getText().toString().toLowerCase();
-                   String txt_Insta = Insta.getText().toString().toLowerCase();
+                    String txt_num = Phone.getText().toString();
+                    String txt_email = Email.getText().toString();
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("saved_name", txt_name);
                     editor.putString("saved_num", txt_num);
                     editor.putString("saved_email", txt_email);
-                    editor.putString("saved_linkedin", txt_LI);
-                    editor.putString("saved_insta", txt_Insta);
                     editor.commit();
                     Toast.makeText(Login.this, "Saved Successfully!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Login.this, HomeScreen.class);
+                    Intent intent = new Intent(Login.this, Other_Details.class);
                     startActivity(intent);
                     finish();
                 }

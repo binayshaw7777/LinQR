@@ -127,7 +127,7 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
     @Override
     public void handleResult(Result rawResult) {
         final String Rawresult = rawResult.getText();
-        try{
+        //try{
             String backup = Rawresult.substring(0,16);
             if(backup.compareTo("http://instagram")==0){
                 String[] split = Rawresult.split("[\\s?]+");
@@ -148,14 +148,14 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
                 i.putExtra("decoded", Rawresult);
                 startActivity(i);
             }
-        }
-        catch (Exception e){
+        //}
+       /* catch (Exception e){
             e.printStackTrace();
             Toast.makeText(Scanner.this, "Scanning Failed!", Toast.LENGTH_SHORT).show();
             Intent inty = new Intent(Scanner.this, HomeScreen.class);
             startActivity(inty);
             finishAffinity();
-        }
+        }*/
 
     }
 

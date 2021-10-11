@@ -10,11 +10,12 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ResultDisplay extends AppCompatActivity {
 
-    TextView Name_Dis, Number_Dis, Email_Dis, Insta_Dis, LinkedIn_Dis;
-    Button toHome, Rescan, Add, Add_insta, Add_LinkedIn;
+    TextView Name_Dis, Number_Dis, Email_Dis;
+    Button toHome, Rescan, Add, Add_insta, Add_LinkedIn, Add_Facebook, Add_Twitter, Add_Discord, Add_Github;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +30,12 @@ public class ResultDisplay extends AppCompatActivity {
         Rescan = findViewById(R.id.rescan_user);
         Add = findViewById(R.id.add_number);
         Email_Dis = findViewById(R.id.email);
-        Insta_Dis = findViewById(R.id.instagram);
-        Add_insta = findViewById(R.id.add_insta);
-        LinkedIn_Dis = findViewById(R.id.Linkedin);
-        Add_LinkedIn = findViewById(R.id.add_LinkedIn);
+        Add_insta = findViewById(R.id.instagram);
+        Add_LinkedIn = findViewById(R.id.Linkedin);
+        Add_Discord = findViewById(R.id.Discord);
+        Add_Facebook = findViewById(R.id.Facebook);
+        Add_Github = findViewById(R.id.Github);
+        Add_Twitter = findViewById(R.id.Twitter);
 
         Intent newInt = getIntent();
         String num = newInt.getExtras().getString("decoded");
@@ -44,25 +47,39 @@ public class ResultDisplay extends AppCompatActivity {
         }
 
         String[] split = decrypt.split(":");
-        String name_display = split[0];
-        String number_display = split[1];
-        String email_display = split[2];
-        String insta_display = split[3]; //+
-        String linkedin_display = split[4];
+        String name_display = split[0]; //name
+        String number_display = split[1]; //number
+        String email_display = split[2]; //email
+        String insta = split[3]; //insta
+        String linkedin = split[4]; //linkedin
+        String discord = split[5]; //Discord
+        String twitter = split[6]; //Twitter
+        String fb = split[7]; //Facebook
+        String git = split[8]; //Github
 
-        String Insta_To_Site = "https://www.instagram.com/"+insta_display;
-        String LinkedIn_To_Site = "https://www.linkedin.com/in/"+linkedin_display;
+
+
+        String Insta_To_Site = "https://www.instagram.com/"+insta;
+        String LinkedIn_To_Site = "https://www.linkedin.com/in/"+linkedin;
+        String Discord_To_Site = "https://discordapp.com/users/"+discord;
+        String Twitter_To_Site = "https://twitter.com/"+twitter;
+        String GitHub_To_Site = "https://www.github.com/"+git;
+        String Facebook_To_Site = "https://www.facebook.com/"+fb;
 
         Name_Dis.setText("Name: "+name_display);
         Number_Dis.setText("Phone: "+number_display);
         Email_Dis.setText("Email: "+email_display);
 
-        if(insta_display.equals("NULL")){ //insta_displa==+
-            Insta_Dis.setText("The user has not added Instagram");
+        if(insta.equals("NULL")){ //insta_displa==+
             Add_insta.setText("Not Available!");
+            Add_insta.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(ResultDisplay.this, "Instagram was not Added by user!", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
         else{
-           Insta_Dis.setText("Instagram ID @"+insta_display);
             Add_insta.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -71,12 +88,88 @@ public class ResultDisplay extends AppCompatActivity {
             });
         }
 
-        if(linkedin_display.equals("NULL")){
-            LinkedIn_Dis.setText("The user has not added LinkedIn");
+        if(discord.equals("NULL")){ //insta_displa==+
+            Add_Discord.setText("Not Available!");
+            Add_Discord.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(ResultDisplay.this, "Discord was not Added by user!", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        else{
+            Add_Discord.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    gotoUrl(Discord_To_Site);
+                }
+            });
+        }
+
+        if(fb.equals("NULL")){ //insta_displa==+
+            Add_Facebook.setText("Not Available!");
+            Add_Facebook.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(ResultDisplay.this, "Facebook was not Added by user!", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        else{
+            Add_Facebook.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    gotoUrl(Facebook_To_Site);
+                }
+            });
+        }
+
+        if(git.equals("NULL")){ //insta_displa==+
+            Add_Github.setText("Not Available!");
+            Add_Github.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(ResultDisplay.this, "Github was not Added by user!", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        else{
+            Add_Github.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    gotoUrl(GitHub_To_Site);
+                }
+            });
+        }
+
+        if(twitter.equals("NULL")){ //insta_displa==+
+            Add_Twitter.setText("Not Available!");
+            Add_Twitter.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(ResultDisplay.this, "Twitter was not Added by user!", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        else{
+            Add_Twitter.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    gotoUrl(Twitter_To_Site);
+                }
+            });
+        }
+
+        if(linkedin.equals("NULL")){
             Add_LinkedIn.setText("Not Available!");
+            Add_LinkedIn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(ResultDisplay.this, "LinkedIn was not added by the user!", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
         else {
-            LinkedIn_Dis.setText("LinkedIn ID @" + linkedin_display);
             Add_LinkedIn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

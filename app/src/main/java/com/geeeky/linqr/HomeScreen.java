@@ -114,6 +114,30 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
                 finishAffinity();
                 break;
 
+            case R.id.Update_other:
+                SharedPreferences preferences1 = getSharedPreferences("save", MODE_PRIVATE);
+                SharedPreferences.Editor editor1 = preferences1.edit();
+                editor1.putString("save1", "false");
+                editor1.apply();
+                Intent c = new Intent(HomeScreen.this, Login.class);
+                startActivity(c);
+                finishAffinity();
+                break;
+
+            case R.id.Reset:
+                SharedPreferences preferences2 = getSharedPreferences("checkbox", MODE_PRIVATE);
+                SharedPreferences preferences3 = getSharedPreferences("save", MODE_PRIVATE);
+                SharedPreferences.Editor editor2 = preferences2.edit();
+                SharedPreferences.Editor editor3 = preferences3.edit();
+                editor2.putString("remember", "false");
+                editor3.putString("save1", "false");
+                editor2.apply();
+                editor3.apply();
+                Intent d = new Intent(HomeScreen.this, Login.class);
+                startActivity(d);
+                finishAffinity();
+                break;
+
             case R.id.About_us:
                 Intent a = new Intent(HomeScreen.this, About_us.class);
                 startActivity(a);
