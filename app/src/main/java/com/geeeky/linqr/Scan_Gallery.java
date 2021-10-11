@@ -96,6 +96,9 @@ public class Scan_Gallery extends AppCompatActivity {
                         String instagram = split[0];
                         gotoUrl(instagram);
                     }
+                    else if(backup.compareTo("https://wa.me/qr")==0){
+                        gotoUrl(Rawresult);
+                    }
                     else{
                         Intent i = new Intent(Scan_Gallery.this, ResultDisplay.class);
                         i.putExtra("decoded", Rawresult);
