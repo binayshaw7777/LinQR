@@ -26,7 +26,6 @@ public class GenerateQR extends AppCompatActivity {
 
     Button back;
     ImageView imageView;
-    TextView view;
     Bitmap bitmap;
     QRGEncoder qrgEncoder;
 
@@ -39,7 +38,6 @@ public class GenerateQR extends AppCompatActivity {
 
         imageView = findViewById(R.id.iv_out);
         back = findViewById(R.id.button);
-        view = findViewById(R.id.view);
 
         SharedPreferences sp = getApplicationContext().getSharedPreferences("user_details", Context.MODE_PRIVATE);
 

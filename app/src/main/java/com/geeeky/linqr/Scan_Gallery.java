@@ -90,9 +90,17 @@ public class Scan_Gallery extends AppCompatActivity {
 
                    // contents = result.getText();
                     final String Rawresult = result.getText();
-                    Intent i = new Intent(Scan_Gallery.this, ResultDisplay.class);
-                    i.putExtra("decoded", Rawresult);
-                    startActivity(i);
+                    String backup = Rawresult.substring(0,16);
+                    if(backup.compareTo("http://instagram")==0){
+                        String[] split = Rawresult.split("[\\s?]+");
+                        String instagram = split[0];
+                        gotoUrl(instagram);
+                    }
+                    else{
+                        Intent i = new Intent(Scan_Gallery.this, ResultDisplay.class);
+                        i.putExtra("decoded", Rawresult);
+                        startActivity(i);
+                    }
 
                   //  Toast.makeText(getApplicationContext(),contents,Toast.LENGTH_LONG).show();
 
@@ -121,5 +129,9 @@ public class Scan_Gallery extends AppCompatActivity {
         }
 
 
+    }
+    private void gotoUrl(String s) {
+        Uri uri = Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW,uri));
     }
 }

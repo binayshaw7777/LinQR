@@ -100,7 +100,7 @@ public class Login extends AppCompatActivity {
     public void onBackPressed(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setTitle("Confirm Exit");
-        alertDialogBuilder.setIcon(R.drawable.logo);
+        alertDialogBuilder.setIcon(R.drawable.logo_final);
         alertDialogBuilder.setMessage("Do you really want to exit?");
         alertDialogBuilder.setCancelable(false);
         alertDialogBuilder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {

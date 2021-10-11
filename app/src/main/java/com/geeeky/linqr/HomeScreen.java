@@ -76,7 +76,7 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         alertDialogBuilder.setTitle("Confirm Exit");
-        alertDialogBuilder.setIcon(R.drawable.logo);
+        alertDialogBuilder.setIcon(R.drawable.logo_final);
         alertDialogBuilder.setMessage("Do you really want to exit?");
         alertDialogBuilder.setCancelable(false);
         alertDialogBuilder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {

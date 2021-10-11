@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeScreen"
-    android:background="@color/text">
+    android:background="#355C7D">
 
     <RelativeLayout
         android:id="@+id/relative"
@@ -186,9 +186,12 @@
         android:id="@+id/pick"
         android:layout_width="197dp"
         android:layout_height="51dp"
-        android:background="@drawable/button_proceed"
+        android:background="@drawable/button_white_proceed"
         android:text="Scan QR from Gallery"
-        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textColor="#355C7D"
+        android:textStyle="bold"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/gridLayout"
         app:layout_constraintStart_toStartOf="@+id/gridLayout"

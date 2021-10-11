@@ -127,9 +127,17 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
     @Override
     public void handleResult(Result rawResult) {
         final String Rawresult = rawResult.getText();
-        Intent i = new Intent(Scanner.this, ResultDisplay.class);
-        i.putExtra("decoded", Rawresult);
-        startActivity(i);
+        String backup = Rawresult.substring(0,16);
+        if(backup.compareTo("http://instagram")==0){
+            String[] split = Rawresult.split("[\\s?]+");
+            String instagram = split[0];
+            gotoUrl(instagram);
+        }
+        else{
+            Intent i = new Intent(Scanner.this, ResultDisplay.class);
+            i.putExtra("decoded", Rawresult);
+            startActivity(i);
+        }
     }
 
     @Override
@@ -138,5 +146,9 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
         Intent x = new Intent(Scanner.this, HomeScreen.class);
         startActivity(x);
         finishAffinity();
+    }
+    private void gotoUrl(String s) {
+        Uri uri = Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW,uri));
     }
 }
