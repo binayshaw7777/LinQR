@@ -127,20 +127,36 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
     @Override
     public void handleResult(Result rawResult) {
         final String Rawresult = rawResult.getText();
-        String backup = Rawresult.substring(0,16);
-        if(backup.compareTo("http://instagram")==0){
-            String[] split = Rawresult.split("[\\s?]+");
-            String instagram = split[0];
-            gotoUrl(instagram);
+        try{
+            String backup = Rawresult.substring(0,16);
+            if(backup.compareTo("http://instagram")==0){
+                String[] split = Rawresult.split("[\\s?]+");
+                String instagram = split[0];
+                gotoUrl(instagram);
+            }
+            else if(backup.compareTo("https://wa.me/qr")==0){
+                gotoUrl(Rawresult);
+            }
+            else if(backup.compareTo("https://facebook")==0){
+                gotoUrl(Rawresult);
+            }
+            else if(backup.compareTo("https://twitter.")==0){
+                gotoUrl(Rawresult);
+            }
+            else{
+                Intent i = new Intent(Scanner.this, ResultDisplay.class);
+                i.putExtra("decoded", Rawresult);
+                startActivity(i);
+            }
         }
-        else if(backup.compareTo("https://wa.me/qr")==0){
-            gotoUrl(Rawresult);
+        catch (Exception e){
+            e.printStackTrace();
+            Toast.makeText(Scanner.this, "Scanning Failed!", Toast.LENGTH_SHORT).show();
+            Intent inty = new Intent(Scanner.this, HomeScreen.class);
+            startActivity(inty);
+            finishAffinity();
         }
-        else{
-            Intent i = new Intent(Scanner.this, ResultDisplay.class);
-            i.putExtra("decoded", Rawresult);
-            startActivity(i);
-        }
+
     }
 
     @Override

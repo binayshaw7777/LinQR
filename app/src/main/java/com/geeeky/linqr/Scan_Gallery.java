@@ -99,6 +99,12 @@ public class Scan_Gallery extends AppCompatActivity {
                     else if(backup.compareTo("https://wa.me/qr")==0){
                         gotoUrl(Rawresult);
                     }
+                    else if(backup.compareTo("https://facebook")==0){
+                        gotoUrl(Rawresult);
+                    }
+                    else if(backup.compareTo("https://twitter.")==0){
+                        gotoUrl(Rawresult);
+                    }
                     else{
                         Intent i = new Intent(Scan_Gallery.this, ResultDisplay.class);
                         i.putExtra("decoded", Rawresult);
@@ -112,6 +118,10 @@ public class Scan_Gallery extends AppCompatActivity {
                 }catch (Exception e){
 
                     e.printStackTrace();
+                    Toast.makeText(Scan_Gallery.this, "Selected Image is not a QR Code!", Toast.LENGTH_SHORT).show();
+                    Intent inty = new Intent(Scan_Gallery.this, HomeScreen.class);
+                    startActivity(inty);
+                    finishAffinity();
 
                 }
 
