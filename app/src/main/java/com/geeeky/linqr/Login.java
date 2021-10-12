@@ -57,6 +57,10 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "Enter your Details!", Toast.LENGTH_SHORT).show();
                 }
                 else{
+                    SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+                    SharedPreferences.Editor editor1 = preferences.edit();
+                    editor1.putString("remember","true");
+                    editor1.apply();
                     String txt_name = Name.getText().toString();
                     String txt_num = Phone.getText().toString();
                     String txt_email = Email.getText().toString();
@@ -73,7 +77,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+      /*  remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
@@ -90,7 +94,7 @@ public class Login extends AppCompatActivity {
                     editor.apply();
                 }
             }
-        });
+        });*/
     }
     public void onBackPressed(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);

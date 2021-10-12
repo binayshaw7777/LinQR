@@ -131,6 +131,8 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
                 SharedPreferences.Editor editor3 = preferences3.edit();
                 editor2.putString("remember", "false");
                 editor3.putString("save1", "false");
+                preferences2.edit().remove("checkbox").commit();
+                preferences3.edit().remove("save").commit();
                 editor2.apply();
                 editor3.apply();
                 Intent d = new Intent(HomeScreen.this, Login.class);

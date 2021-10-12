@@ -24,7 +24,7 @@ import java.io.InputStream;
 
 public class Scan_Gallery extends AppCompatActivity {
 
-    Button home;
+  //  Button home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +33,16 @@ public class Scan_Gallery extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_scan_gallery);
 
-        home = findViewById(R.id.home);
+      //  home = findViewById(R.id.home);
 
-        home.setOnClickListener(new View.OnClickListener() {
+       /* home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Scan_Gallery.this, HomeScreen.class);
                 startActivity(intent);
                 finishAffinity();
             }
-        });
+        });*/
 
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
@@ -119,7 +119,7 @@ public class Scan_Gallery extends AppCompatActivity {
 
                     e.printStackTrace();
                     Toast.makeText(Scan_Gallery.this, "Selected Image is not a QR Code!", Toast.LENGTH_SHORT).show();
-                    Intent inty = new Intent(Scan_Gallery.this, HomeScreen.class);
+                    Intent inty = new Intent(Scan_Gallery.this, Scanner.class);
                     startActivity(inty);
                     finishAffinity();
 
@@ -132,13 +132,17 @@ public class Scan_Gallery extends AppCompatActivity {
                 e.printStackTrace();
 
                 Toast.makeText(Scan_Gallery.this, "Something went wrong", Toast.LENGTH_LONG).show();
-
+                Intent intx = new Intent(Scan_Gallery.this, Scanner.class);
+                startActivity(intx);
+                finishAffinity();
             }
 
         }else {
 
             Toast.makeText(Scan_Gallery.this, "You haven't picked Image",Toast.LENGTH_LONG).show();
-
+            Intent intz = new Intent(Scan_Gallery.this, Scanner.class);
+            startActivity(intz);
+            finishAffinity();
         }
 
 

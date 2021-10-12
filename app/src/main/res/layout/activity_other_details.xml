@@ -147,21 +147,6 @@
         app:layout_constraintStart_toStartOf="@+id/instagram"
         app:layout_constraintTop_toBottomOf="@+id/instagram" />
 
-    <CheckBox
-        android:id="@+id/save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:buttonTint="@color/white"
-        android:gravity="center"
-        android:text=" Save all details"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/git"
-        app:layout_constraintStart_toStartOf="@+id/git"
-        app:layout_constraintTop_toBottomOf="@+id/git">
-
-    </CheckBox>
-
     <Button
         android:id="@+id/next"
         android:layout_width="143dp"
@@ -175,9 +160,8 @@
         android:textColor="@color/text"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/save"
-        app:layout_constraintStart_toStartOf="@+id/save"
-        app:layout_constraintTop_toBottomOf="@+id/save"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="@+id/git"
+        app:layout_constraintStart_toStartOf="@+id/git"
+        app:layout_constraintTop_toBottomOf="@+id/git" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

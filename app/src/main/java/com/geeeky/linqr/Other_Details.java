@@ -18,7 +18,7 @@ public class Other_Details extends AppCompatActivity {
     SharedPreferences sp;
     EditText Twitter, Insta, Linkedin, Discord, Facebook, Github;
     Button Cont;
-    CheckBox save;
+  //  CheckBox save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class Other_Details extends AppCompatActivity {
         Github = findViewById(R.id.git);
         Insta = findViewById(R.id.instagram);
         Cont = findViewById(R.id.next);
-        save = findViewById(R.id.save);
+       // save = findViewById(R.id.save);
 
         sp = getSharedPreferences("other_details", Context.MODE_PRIVATE);
 
@@ -73,45 +73,29 @@ public class Other_Details extends AppCompatActivity {
         Cont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    String txt_Insta = Insta.getText().toString().toLowerCase();
-                    String txt_Li = Linkedin.getText().toString().toLowerCase();
-                    String txt_Fb = Facebook.getText().toString().toLowerCase();
-                    String txt_git = Linkedin.getText().toString().toLowerCase();
-                    String txt_twitter = Twitter.getText().toString().toLowerCase();
-                    String dis = Discord.getText().toString();
-                    SharedPreferences.Editor editor = sp.edit();
-                    editor.putString("saved_Insta", txt_Insta);
-                    editor.putString("saved_Li", txt_Li);
-                    editor.putString("saved_Git", txt_git);
-                    editor.putString("saved_Fb", txt_Fb);
-                    editor.putString("saved_Twit", txt_twitter);
-                    editor.putString("saved_Dis", dis);
-                    editor.commit();
-                    Toast.makeText(Other_Details.this, "Saved Successfully!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Other_Details.this, HomeScreen.class);
-                    startActivity(intent);
-                    finish();
-                    }
-            });
-
-        save.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-                if (buttonView.isChecked()){
                     SharedPreferences preferences = getSharedPreferences("save",MODE_PRIVATE);
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("save1","true");
-                    editor.apply();
-                }
-                else if (!buttonView.isChecked()){
-                    SharedPreferences preferences = getSharedPreferences("save",MODE_PRIVATE);
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("save1","false");
-                    editor.apply();
-                }
+                    SharedPreferences.Editor editor1 = preferences.edit();
+                    editor1.putString("save1","true");
+                    editor1.apply();
+                String txt_Insta = Insta.getText().toString().toLowerCase();
+                String txt_Li = Linkedin.getText().toString().toLowerCase();
+                String txt_Fb = Facebook.getText().toString().toLowerCase();
+                String txt_git = Linkedin.getText().toString().toLowerCase();
+                String txt_twitter = Twitter.getText().toString().toLowerCase();
+                String dis = Discord.getText().toString();
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("saved_Insta", txt_Insta);
+                editor.putString("saved_Li", txt_Li);
+                editor.putString("saved_Git", txt_git);
+                editor.putString("saved_Fb", txt_Fb);
+                editor.putString("saved_Twit", txt_twitter);
+                editor.putString("saved_Dis", dis);
+                editor.commit();
+                Toast.makeText(Other_Details.this, "Saved Successfully!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Other_Details.this, HomeScreen.class);
+                startActivity(intent);
+                finish();
             }
-        });
-
+            });
     }
 }
