@@ -21,7 +21,7 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
 
     TextView Name, Num;
     CardView userQR, ScanUser;
-    Button Pick;
+    //Button Pick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
         Num = findViewById(R.id.num);
         userQR = findViewById(R.id.user_qr);
         ScanUser = findViewById(R.id.scan_user);
-        Pick = findViewById(R.id.pick);
+        //Pick = findViewById(R.id.pick);
 
 
         String name=sp.getString("saved_name", "");
@@ -54,14 +54,14 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
             }
         });
 
-        Pick.setOnClickListener(new View.OnClickListener() {
+/*        Pick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeScreen.this, Scan_Gallery.class);
                 startActivity(intent);
                 finish();
             }
-        });
+        });*/
 
         userQR.setOnClickListener(new View.OnClickListener() {
             @Override

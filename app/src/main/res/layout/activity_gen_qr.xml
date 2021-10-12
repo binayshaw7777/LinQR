@@ -86,10 +86,12 @@
         android:columnOrderPreserved="false"
         android:padding="10dp"
         android:rowCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/relative"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="@+id/relative"
-        app:layout_constraintTop_toBottomOf="@+id/relative">
+        app:layout_constraintTop_toBottomOf="@+id/relative"
+        app:layout_constraintVertical_bias="0.071">
 
 
         <androidx.cardview.widget.CardView
@@ -181,21 +183,6 @@
 
 
     </GridLayout>
-
-    <Button
-        android:id="@+id/pick"
-        android:layout_width="197dp"
-        android:layout_height="51dp"
-        android:background="@drawable/button_white_proceed"
-        android:text="Scan QR from Gallery"
-        android:textAllCaps="false"
-        android:textColor="#355C7D"
-        android:textStyle="bold"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/gridLayout"
-        app:layout_constraintStart_toStartOf="@+id/gridLayout"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
