@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.zxing.BinaryBitmap;
@@ -24,7 +25,9 @@ import java.io.InputStream;
 
 public class Scan_Gallery extends AppCompatActivity {
 
-  //  Button home;
+    private Button home, con;
+    private TextView Soc, Lin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +36,19 @@ public class Scan_Gallery extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_scan_gallery);
 
-      //  home = findViewById(R.id.home);
+        home = findViewById(R.id.home);
+        con = findViewById(R.id.connect);
+        Soc = findViewById(R.id.name);
+        Lin = findViewById(R.id.link);
 
-       /* home.setOnClickListener(new View.OnClickListener() {
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Scan_Gallery.this, HomeScreen.class);
                 startActivity(intent);
                 finishAffinity();
             }
-        });*/
+        });
 
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
@@ -95,15 +101,47 @@ public class Scan_Gallery extends AppCompatActivity {
                         String[] split = Rawresult.split("[\\s?]+");
                         String instagram = split[0];
                         gotoUrl(instagram);
+                        Soc.setText("Instagram");
+                        Lin.setText(result.getText());
+                        con.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                gotoUrl(Rawresult);
+                            }
+                        });
                     }
                     else if(backup.compareTo("https://wa.me/qr")==0){
                         gotoUrl(Rawresult);
+                        Soc.setText("WhatsApp");
+                        Lin.setText(result.getText());
+                        con.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                gotoUrl(Rawresult);
+                            }
+                        });
                     }
                     else if(backup.compareTo("https://facebook")==0){
                         gotoUrl(Rawresult);
+                        Soc.setText("Facebook");
+                        Lin.setText(result.getText());
+                        con.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                gotoUrl(Rawresult);
+                            }
+                        });
                     }
                     else if(backup.compareTo("https://twitter.")==0){
                         gotoUrl(Rawresult);
+                        Soc.setText("Twitter");
+                        Lin.setText(result.getText());
+                        con.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                gotoUrl(Rawresult);
+                            }
+                        });
                     }
                     else{
                         Intent i = new Intent(Scan_Gallery.this, ResultDisplay.class);

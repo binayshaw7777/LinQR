@@ -1,13 +1,21 @@
 package com.geeeky.linqr;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Point;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
@@ -15,16 +23,18 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.zxing.WriterException;
-
+import java.io.File;
+import java.io.FileOutputStream;
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 
 public class GenerateQR extends AppCompatActivity {
 
-    Button back;
+    private static final int FILE_SHARE_PERMISSION = 102;
+    Button back, save;
     ImageView imageView;
     Bitmap bitmap;
     QRGEncoder qrgEncoder;
@@ -38,6 +48,7 @@ public class GenerateQR extends AppCompatActivity {
 
         imageView = findViewById(R.id.iv_out);
         back = findViewById(R.id.button);
+        save = findViewById(R.id.save);
 
         SharedPreferences sp = getApplicationContext().getSharedPreferences("user_details", Context.MODE_PRIVATE);
         SharedPreferences sp1 = getApplicationContext().getSharedPreferences("other_details", Context.MODE_PRIVATE);
@@ -51,8 +62,6 @@ public class GenerateQR extends AppCompatActivity {
         String Git=sp1.getString("saved_Git", "");
         String Twit=sp1.getString("saved_Twit", "");
         String Fb=sp1.getString("saved_Fb", "");
-
-
 
         if(Linkedin.isEmpty()){
             Linkedin="NULL";
@@ -124,6 +133,49 @@ public class GenerateQR extends AppCompatActivity {
                 finish();
             }
         });
+
+        save.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if(Build.VERSION.SDK_INT>=23){
+                    if(checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+                        shareQrCode();
+                    }
+                    else{
+                        requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,FILE_SHARE_PERMISSION);
+                    }
+                }
+                else{
+                    shareQrCode();
+                }
+            }
+
+            private void shareQrCode() {
+                MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, name+"'s LinQR Code"
+                        , null);
+                Toast.makeText(GenerateQR.this, "Successfully saved to gallery", Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
+    }
+
+    private boolean checkPermission(String permission) {
+        int result= ContextCompat.checkSelfPermission(GenerateQR.this,permission);
+        if(result== PackageManager.PERMISSION_GRANTED){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    private void requestPermission(String permission1,int code){
+        if(ActivityCompat.shouldShowRequestPermissionRationale(GenerateQR.this,permission1)){
+
+        }
+        else{
+            ActivityCompat.requestPermissions(GenerateQR.this,new String[]{permission1},code);
+        }
     }
     @Override
     public void onBackPressed() {

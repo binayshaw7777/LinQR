@@ -85,7 +85,7 @@
 
     <Button
         android:id="@+id/instagram"
-        android:layout_width="110dp"
+        android:layout_width="130dp"
         android:layout_height="45dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/button_white_proceed"
@@ -101,7 +101,7 @@
 
     <Button
         android:id="@+id/Facebook"
-        android:layout_width="110dp"
+        android:layout_width="130dp"
         android:layout_height="45dp"
         android:layout_gravity="left"
         android:layout_marginTop="28dp"
@@ -117,7 +117,7 @@
 
     <Button
         android:id="@+id/Twitter"
-        android:layout_width="110dp"
+        android:layout_width="130dp"
         android:layout_height="45dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/button_white_proceed"
@@ -133,7 +133,7 @@
 
     <Button
         android:id="@+id/Linkedin"
-        android:layout_width="110dp"
+        android:layout_width="130dp"
         android:layout_height="45dp"
         android:layout_gravity="left"
         android:layout_marginTop="32dp"
@@ -150,7 +150,7 @@
 
     <Button
         android:id="@+id/Discord"
-        android:layout_width="110dp"
+        android:layout_width="130dp"
         android:layout_height="45dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/button_white_proceed"
@@ -166,7 +166,7 @@
 
     <Button
         android:id="@+id/Github"
-        android:layout_width="110dp"
+        android:layout_width="130dp"
         android:layout_height="45dp"
         android:layout_gravity="left"
         android:layout_marginTop="32dp"
@@ -185,26 +185,25 @@
         android:id="@+id/Nav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="44dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/Github"
-        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="@+id/Discord"
-        app:layout_constraintTop_toBottomOf="@+id/Discord"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintVertical_bias="1.0">
 
         <Button
             android:id="@+id/to_home"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/button_white_proceed"
+            android:background="@drawable/fill_button"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="Home"
             android:textAllCaps="false"
-            android:textColor="@color/text"
+            android:textColor="@color/white"
             tools:layout_editor_absoluteX="71dp"
             tools:layout_editor_absoluteY="613dp" />
 

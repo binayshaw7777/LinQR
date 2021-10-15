@@ -5,4 +5,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Scan_Gallery"
-    android:background="@color/text"/>
+    android:background="@color/text">
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/button_white_proceed"
+        android:text="Back to Home"
+        android:textAllCaps="false"
+        android:textColor="@color/text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/connect"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="@+id/connect"
+        app:layout_constraintTop_toBottomOf="@+id/connect"
+        app:layout_constraintVertical_bias="0.786" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="279dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="Social Media Name:"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/link"
+        android:layout_width="301dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="88dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="Link"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/name"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <Button
+        android:id="@+id/connect"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/button_white_proceed"
+        android:text="Connect"
+        android:textAllCaps="false"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="@+id/link"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/link"
+        app:layout_constraintTop_toBottomOf="@+id/link" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="LinQR"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
