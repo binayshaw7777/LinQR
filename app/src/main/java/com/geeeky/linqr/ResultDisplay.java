@@ -1,6 +1,7 @@
 package com.geeeky.linqr;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -15,7 +16,9 @@ import android.widget.Toast;
 public class ResultDisplay extends AppCompatActivity {
 
     TextView Name_Dis, Number_Dis, Email_Dis;
-    Button toHome, Rescan, Add, Add_insta, Add_LinkedIn, Add_Facebook, Add_Twitter, Add_Discord, Add_Github;
+    CardView Add_insta, Add_LinkedIn, Add_Facebook, Add_Twitter, Add_Discord, Add_Github;
+    //Button toHome, Rescan, Add, Add_insta, Add_LinkedIn, Add_Facebook, Add_Twitter, Add_Discord, Add_Github;
+    Button Rescan, Add, toHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +74,7 @@ public class ResultDisplay extends AppCompatActivity {
         Email_Dis.setText("Email: "+email_display);
 
         if(insta.equals("NULL")){ //insta_displa==+
-            Add_insta.setText("Not Available!");
+          //  Add_insta.setText("Not Available!");
             Add_insta.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -89,7 +92,7 @@ public class ResultDisplay extends AppCompatActivity {
         }
 
         if(discord.equals("NULL")){ //insta_displa==+
-            Add_Discord.setText("Not Available!");
+          //  Add_Discord.setText("Not Available!");
             Add_Discord.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -107,7 +110,7 @@ public class ResultDisplay extends AppCompatActivity {
         }
 
         if(fb.equals("NULL")){ //insta_displa==+
-            Add_Facebook.setText("Not Available!");
+           // Add_Facebook.setText("Not Available!");
             Add_Facebook.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -125,7 +128,7 @@ public class ResultDisplay extends AppCompatActivity {
         }
 
         if(git.equals("NULL")){ //insta_displa==+
-            Add_Github.setText("Not Available!");
+        //    Add_Github.setText("Not Available!");
             Add_Github.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -143,7 +146,7 @@ public class ResultDisplay extends AppCompatActivity {
         }
 
         if(twitter.equals("NULL")){ //insta_displa==+
-            Add_Twitter.setText("Not Available!");
+         //   Add_Twitter.setText("Not Available!");
             Add_Twitter.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -161,7 +164,7 @@ public class ResultDisplay extends AppCompatActivity {
         }
 
         if(linkedin.equals("NULL")){
-            Add_LinkedIn.setText("Not Available!");
+         //   Add_LinkedIn.setText("Not Available!");
             Add_LinkedIn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

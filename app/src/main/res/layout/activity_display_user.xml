@@ -5,47 +5,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ResultDisplay"
-    android:background="@drawable/clean_bg">
+    android:background="@color/white">
 
 
     <TextView
         android:id="@+id/dis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="56dp"
         android:fontFamily="@font/montserrat"
         android:text="Successfully Scanned!"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/dis_name"
         android:layout_width="316dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:text="Name of User"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/dis"
         app:layout_constraintStart_toStartOf="@+id/dis"
         app:layout_constraintTop_toBottomOf="@+id/dis" />
 
+
     <TextView
         android:id="@+id/email"
         android:layout_width="324dp"
-        android:layout_height="32dp"
+        android:layout_height="42dp"
         android:layout_marginTop="36dp"
+        android:background="@drawable/black_border"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:text="Email:"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="@+id/add_number"
         app:layout_constraintStart_toStartOf="@+id/number"
@@ -54,14 +55,14 @@
     <Button
         android:id="@+id/add_number"
         android:layout_width="62dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="44dp"
-        android:background="@drawable/button_white_proceed"
+        android:layout_height="42dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/black_fill"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="Add"
         android:textAllCaps="false"
-        android:textColor="@color/text"
+        android:textColor="@color/white"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="@+id/dis_name"
         app:layout_constraintHorizontal_bias="1.0"
@@ -70,116 +71,146 @@
 
     <TextView
         android:id="@+id/number"
-        android:layout_width="235dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="229dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/black_border"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:text="Phone no: "
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="17dp"
         app:layout_constraintEnd_toEndOf="@+id/dis_name"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/dis_name"
         app:layout_constraintTop_toBottomOf="@+id/dis_name" />
 
-    <Button
+    <androidx.cardview.widget.CardView
         android:id="@+id/instagram"
-        android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/button_white_proceed"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="Instagram"
-        android:textAllCaps="false"
-        android:textColor="@color/text"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="36dp"
+        android:padding="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
         app:layout_constraintEnd_toStartOf="@+id/Facebook"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.009"
         app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/email">
 
-    <Button
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="12dp"
+            android:background="@drawable/instagram" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/Facebook"
-        android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:layout_gravity="left"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="4dp"
-        android:background="@drawable/button_white_proceed"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="Facebook"
-        android:textAllCaps="false"
-        android:textColor="@color/text"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
+        android:padding="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
         app:layout_constraintEnd_toEndOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/email">
 
-    <Button
-        android:id="@+id/Twitter"
-        android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button_white_proceed"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="Twitter"
-        android:textAllCaps="false"
-        android:textColor="@color/text"
-        app:layout_constraintEnd_toEndOf="@+id/instagram"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/instagram"
-        app:layout_constraintTop_toBottomOf="@+id/instagram" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/facebook" />
+    </androidx.cardview.widget.CardView>
 
-    <Button
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/Linkedin"
-        android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:layout_gravity="left"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button_white_proceed"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="LinkedIn"
-        android:textAllCaps="false"
-        android:textColor="@color/text"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:padding="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
         app:layout_constraintEnd_toEndOf="@+id/Facebook"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/Facebook"
-        app:layout_constraintTop_toBottomOf="@+id/Facebook" />
+        app:layout_constraintTop_toBottomOf="@+id/Facebook">
 
-    <Button
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="14dp"
+            android:background="@drawable/linkedin" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Twitter"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:padding="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:layout_constraintEnd_toEndOf="@+id/instagram"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/instagram"
+        app:layout_constraintTop_toBottomOf="@+id/instagram">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="13dp"
+            android:background="@drawable/twitter" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/Discord"
-        android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button_white_proceed"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="Discord"
-        android:textAllCaps="false"
-        android:textColor="@color/text"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:padding="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
         app:layout_constraintEnd_toEndOf="@+id/Twitter"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/Twitter"
-        app:layout_constraintTop_toBottomOf="@+id/Twitter" />
+        app:layout_constraintTop_toBottomOf="@+id/Twitter">
 
-    <Button
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="13dp"
+            android:background="@drawable/discord" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/Github"
-        android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:layout_gravity="left"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button_white_proceed"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="GitHub"
-        android:textAllCaps="false"
-        android:textColor="@color/text"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:padding="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
         app:layout_constraintEnd_toEndOf="@+id/Linkedin"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/Linkedin"
-        app:layout_constraintTop_toBottomOf="@+id/Linkedin" />
+        app:layout_constraintTop_toBottomOf="@+id/Linkedin">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="13dp"
+            android:background="@drawable/github" />
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:id="@+id/Nav"
@@ -189,6 +220,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/Github"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="@+id/Discord"
         app:layout_constraintTop_toBottomOf="@+id/email"
         app:layout_constraintVertical_bias="1.0">
@@ -198,12 +230,12 @@
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/fill_button"
+            android:background="@drawable/black_border"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="Home"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             tools:layout_editor_absoluteX="71dp"
             tools:layout_editor_absoluteY="613dp" />
 
@@ -212,12 +244,12 @@
             android:layout_width="130dp"
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/button_white_proceed"
+            android:background="@drawable/black_fill"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="Scan Again"
             android:textAllCaps="false"
-            android:textColor="@color/text"
+            android:textColor="@color/white"
             tools:layout_editor_absoluteX="249dp"
             tools:layout_editor_absoluteY="614dp" />
 

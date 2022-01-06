@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".About_us"
-    android:background="@color/text">
+    android:background="#F4F6F8">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -27,7 +27,7 @@
         android:fontFamily="@font/montserrat"
         android:text="LinQR"
         android:textSize="25dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -40,7 +40,7 @@
         android:fontFamily="@font/montserrat"
         android:gravity="center_horizontal"
         android:text="About Us"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
@@ -54,7 +54,7 @@
         android:fontFamily="@font/montserrat"
         android:gravity="center_horizontal"
         android:text="Geeky Musketeers is a team of 3 Full Stack Developers pursuing CSE who are passionate in Developing and Designing \n\n Developed and Designed by: \n\nBinay Shaw\n\n\nThank you for Downloading our App"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="17dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
@@ -80,12 +80,12 @@
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:layout_margin="10dp"
-            android:background="@drawable/button_white_proceed"
+            android:background="@drawable/black_fill"
             android:fontFamily="@font/montserrat"
             android:onClick="book"
             android:text="Back to Home"
             android:textAllCaps="false"
-            android:textColor="@color/text"
+            android:textColor="@color/white"
             tools:ignore="OnClick">
 
         </Button>
@@ -95,11 +95,11 @@
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:layout_marginRight="5dp"
-            android:background="@drawable/button_white_proceed"
+            android:background="@drawable/black_fill"
             android:fontFamily="@font/montserrat"
             android:text="Connect with us"
             android:textAllCaps="false"
-            android:textColor="@color/text">
+            android:textColor="@color/white">
 
         </Button>
 
@@ -121,8 +121,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:fontFamily="@font/montserrat"
-        android:text="v2.1"
-        android:textColor="@color/white"
+        android:text="v2.2"
+        android:textColor="@color/black"
         android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
