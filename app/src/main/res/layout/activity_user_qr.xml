@@ -8,7 +8,7 @@
     android:gravity="center"
     android:layout_gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/bg_scan">
+    android:background="#EAF5FF">
 
 
     <TextView
@@ -19,7 +19,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginTop="10dp"
         android:text="Here is your Personal QR"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="22dp" />
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginTop="5dp"
         android:text="Scan this QR with LinQR App"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="17dp" />
 
     <ImageView
@@ -55,10 +55,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
-            android:background="@drawable/fill_button"
+            android:background="@drawable/black_border"
             android:text="Back"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="1.0" />
@@ -68,10 +68,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/button_white_proceed"
+            android:background="@drawable/black_fill"
             android:text="Save"
             android:textAllCaps="false"
-            android:textColor="#355C7D"
+            android:textColor="@color/white"
             android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/iv_out"

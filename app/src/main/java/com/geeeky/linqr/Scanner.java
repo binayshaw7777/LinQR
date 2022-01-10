@@ -31,7 +31,7 @@ public class Scanner extends AppCompatActivity{
 
     CodeScanner codeScanner;
     CodeScannerView scannView;
-    Button Gallery;
+   // Button Gallery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,16 +40,16 @@ public class Scanner extends AppCompatActivity{
         scannView = findViewById(R.id.scannerView);
         getSupportActionBar().hide();
         codeScanner = new CodeScanner(this,scannView);
-        Gallery = findViewById(R.id.gal);
-
-        Gallery.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Scanner.this, Scan_Gallery.class);
-                startActivity(i);
-                finish();
-            }
-        });
+//        Gallery = findViewById(R.id.gal);
+//
+//        Gallery.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(Scanner.this, Scan_Gallery.class);
+//                startActivity(i);
+//                finish();
+//            }
+//        });
 
         codeScanner.setDecodeCallback(new DecodeCallback() {
             @Override

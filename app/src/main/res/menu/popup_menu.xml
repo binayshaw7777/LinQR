@@ -4,8 +4,8 @@
         android:title="Update Details"/>
     <item android:id="@+id/Update_other"
         android:title="Update Other Details"/>
-    <item android:id="@+id/Reset"
-        android:title="Reset All Data"/>
+    <!--item android:id="@+id/Reset"
+        android:title="Reset All Data"-->
     <item android:id="@+id/About_us"
         android:title="About Us"/>
 </menu>

@@ -101,7 +101,7 @@ public class Scan_Gallery extends AppCompatActivity {
                         String[] split = Rawresult.split("[\\s?]+");
                         String instagram = split[0];
                         gotoUrl(instagram);
-                        Soc.setText("Instagram");
+                        Soc.setText("Instagram Found");
                         Lin.setText(result.getText());
                         con.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -112,7 +112,7 @@ public class Scan_Gallery extends AppCompatActivity {
                     }
                     else if(backup.compareTo("https://wa.me/qr")==0){
                         gotoUrl(Rawresult);
-                        Soc.setText("WhatsApp");
+                        Soc.setText("WhatsApp Found");
                         Lin.setText(result.getText());
                         con.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -123,7 +123,7 @@ public class Scan_Gallery extends AppCompatActivity {
                     }
                     else if(backup.compareTo("https://facebook")==0){
                         gotoUrl(Rawresult);
-                        Soc.setText("Facebook");
+                        Soc.setText("Facebook Found");
                         Lin.setText(result.getText());
                         con.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -134,7 +134,7 @@ public class Scan_Gallery extends AppCompatActivity {
                     }
                     else if(backup.compareTo("https://twitter.")==0){
                         gotoUrl(Rawresult);
-                        Soc.setText("Twitter");
+                        Soc.setText("Twitter Found");
                         Lin.setText(result.getText());
                         con.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -157,7 +157,7 @@ public class Scan_Gallery extends AppCompatActivity {
 
                     e.printStackTrace();
                     Toast.makeText(Scan_Gallery.this, "Selected Image is not a QR Code!", Toast.LENGTH_SHORT).show();
-                    Intent inty = new Intent(Scan_Gallery.this, Scanner.class);
+                    Intent inty = new Intent(Scan_Gallery.this, HomeScreen.class);
                     startActivity(inty);
                     finishAffinity();
 
@@ -170,7 +170,7 @@ public class Scan_Gallery extends AppCompatActivity {
                 e.printStackTrace();
 
                 Toast.makeText(Scan_Gallery.this, "Something went wrong", Toast.LENGTH_LONG).show();
-                Intent intx = new Intent(Scan_Gallery.this, Scanner.class);
+                Intent intx = new Intent(Scan_Gallery.this, HomeScreen.class);
                 startActivity(intx);
                 finishAffinity();
             }
@@ -178,7 +178,7 @@ public class Scan_Gallery extends AppCompatActivity {
         }else {
 
             Toast.makeText(Scan_Gallery.this, "You haven't picked Image",Toast.LENGTH_LONG).show();
-            Intent intz = new Intent(Scan_Gallery.this, Scanner.class);
+            Intent intz = new Intent(Scan_Gallery.this, HomeScreen.class);
             startActivity(intz);
             finishAffinity();
         }

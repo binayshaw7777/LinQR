@@ -20,7 +20,8 @@ import android.widget.Toast;
 public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     TextView Name, Num;
-    CardView userQR, ScanUser;
+   // CardView userQR, ScanUser;
+    Button userQR, ScanUser, Gallery, Logout;
     //Button Pick;
 
     @Override
@@ -37,6 +38,36 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
         userQR = findViewById(R.id.user_qr);
         ScanUser = findViewById(R.id.scan_user);
         //Pick = findViewById(R.id.pick);
+        Gallery = findViewById(R.id.gal);
+        Logout = findViewById(R.id.logout);
+
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences preferences2 = getSharedPreferences("checkbox", MODE_PRIVATE);
+                SharedPreferences preferences3 = getSharedPreferences("save", MODE_PRIVATE);
+                SharedPreferences.Editor editor2 = preferences2.edit();
+                SharedPreferences.Editor editor3 = preferences3.edit();
+                editor2.putString("remember", "false");
+                editor3.putString("save1", "false");
+                preferences2.edit().remove("checkbox").commit();
+                preferences3.edit().remove("save").commit();
+                editor2.apply();
+                editor3.apply();
+                Intent d = new Intent(HomeScreen.this, Login.class);
+                startActivity(d);
+                finishAffinity();
+            }
+        });
+
+        Gallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeScreen.this, Scan_Gallery.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
 
         String name=sp.getString("saved_name", "");
@@ -124,21 +155,21 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
                 finishAffinity();
                 break;
 
-            case R.id.Reset:
-                SharedPreferences preferences2 = getSharedPreferences("checkbox", MODE_PRIVATE);
-                SharedPreferences preferences3 = getSharedPreferences("save", MODE_PRIVATE);
-                SharedPreferences.Editor editor2 = preferences2.edit();
-                SharedPreferences.Editor editor3 = preferences3.edit();
-                editor2.putString("remember", "false");
-                editor3.putString("save1", "false");
-                preferences2.edit().remove("checkbox").commit();
-                preferences3.edit().remove("save").commit();
-                editor2.apply();
-                editor3.apply();
-                Intent d = new Intent(HomeScreen.this, Login.class);
-                startActivity(d);
-                finishAffinity();
-                break;
+//            case R.id.Reset:
+//                SharedPreferences preferences2 = getSharedPreferences("checkbox", MODE_PRIVATE);
+//                SharedPreferences preferences3 = getSharedPreferences("save", MODE_PRIVATE);
+//                SharedPreferences.Editor editor2 = preferences2.edit();
+//                SharedPreferences.Editor editor3 = preferences3.edit();
+//                editor2.putString("remember", "false");
+//                editor3.putString("save1", "false");
+//                preferences2.edit().remove("checkbox").commit();
+//                preferences3.edit().remove("save").commit();
+//                editor2.apply();
+//                editor3.apply();
+//                Intent d = new Intent(HomeScreen.this, Login.class);
+//                startActivity(d);
+//                finishAffinity();
+//                break;
 
             case R.id.About_us:
                 Intent a = new Intent(HomeScreen.this, About_us.class);

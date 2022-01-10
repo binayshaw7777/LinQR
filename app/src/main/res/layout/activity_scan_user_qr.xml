@@ -25,23 +25,4 @@
         app:layout_constraintVertical_bias="0.0"
         app:maskColor="#77000000" />
 
-    <Button
-        android:id="@+id/gal"
-        android:layout_width="174dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/button_proceed_gray"
-        android:fontFamily="@font/montserrat"
-        android:text="Scan from Gallery"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/scannerView"
-        app:layout_constraintVertical_bias="0.89" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

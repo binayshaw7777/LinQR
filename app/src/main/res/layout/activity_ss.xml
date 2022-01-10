@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreen"
-    android:background="@color/text">
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/textView"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:text="LinQR"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="@+id/animation_view"
         app:layout_constraintHorizontal_bias="0.497"
@@ -31,15 +31,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/scanner_anim"/>
+        app:lottie_rawRes="@raw/qr_scaning"/>
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="Scan to get linked with people"
-        android:textColor="@color/white"
+        android:text="Connecting people in a Snap"
+        android:textColor="@color/black"
         android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView"
