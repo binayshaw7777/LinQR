@@ -247,7 +247,7 @@
             android:background="@drawable/black_fill"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="Scan Again"
+            android:text="Camera Scan"
             android:textAllCaps="false"
             android:textColor="@color/white"
             tools:layout_editor_absoluteX="249dp"

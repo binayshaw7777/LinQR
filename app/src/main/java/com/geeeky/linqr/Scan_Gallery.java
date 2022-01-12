@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,7 @@ public class Scan_Gallery extends AppCompatActivity {
 
     private Button home, con;
     private TextView Soc, Lin;
-
+    private ImageView change;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class Scan_Gallery extends AppCompatActivity {
         con = findViewById(R.id.connect);
         Soc = findViewById(R.id.name);
         Lin = findViewById(R.id.link);
+        change = findViewById(R.id.imageView5);
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +104,7 @@ public class Scan_Gallery extends AppCompatActivity {
                         String instagram = split[0];
                         gotoUrl(instagram);
                         Soc.setText("Instagram Found");
+                        change.setBackgroundResource(R.drawable.instagram_high);
                         Lin.setText(result.getText());
                         con.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -113,6 +116,7 @@ public class Scan_Gallery extends AppCompatActivity {
                     else if(backup.compareTo("https://wa.me/qr")==0){
                         gotoUrl(Rawresult);
                         Soc.setText("WhatsApp Found");
+                        change.setBackgroundResource(R.drawable.whatsapp);
                         Lin.setText(result.getText());
                         con.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -124,6 +128,7 @@ public class Scan_Gallery extends AppCompatActivity {
                     else if(backup.compareTo("https://facebook")==0){
                         gotoUrl(Rawresult);
                         Soc.setText("Facebook Found");
+                        change.setBackgroundResource(R.drawable.facebook_high);
                         Lin.setText(result.getText());
                         con.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -135,6 +140,7 @@ public class Scan_Gallery extends AppCompatActivity {
                     else if(backup.compareTo("https://twitter.")==0){
                         gotoUrl(Rawresult);
                         Soc.setText("Twitter Found");
+                        change.setBackgroundResource(R.drawable.twitter_high);
                         Lin.setText(result.getText());
                         con.setOnClickListener(new View.OnClickListener() {
                             @Override

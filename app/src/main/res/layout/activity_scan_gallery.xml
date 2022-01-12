@@ -27,7 +27,7 @@
         android:id="@+id/name"
         android:layout_width="279dp"
         android:layout_height="46dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="44dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:text="Social Media Name:"
@@ -42,28 +42,28 @@
         android:id="@+id/link"
         android:layout_width="301dp"
         android:layout_height="80dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:text="Link"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/name"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="@+id/name"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <Button
         android:id="@+id/connect"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="68dp"
         android:background="@drawable/black_fill"
         android:text="Connect"
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/link"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="@+id/link"
         app:layout_constraintTop_toBottomOf="@+id/link" />
 
@@ -71,14 +71,25 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="LinQR"
+        android:layout_marginTop="72dp"
         android:fontFamily="@font/montserrat"
+        android:text="LinQR"
         android:textColor="@color/black"
         android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/name"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        android:background="#EAF5FF" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

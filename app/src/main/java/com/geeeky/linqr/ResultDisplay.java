@@ -1,8 +1,10 @@
 package com.geeeky.linqr;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -215,5 +217,30 @@ public class ResultDisplay extends AppCompatActivity {
     private void gotoUrl(String s) {
         Uri uri = Uri.parse(s);
         startActivity(new Intent(Intent.ACTION_VIEW,uri));
+    }
+
+    public void onBackPressed(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+        alertDialogBuilder.setTitle("Back to Home");
+        alertDialogBuilder.setIcon(R.drawable.logo);
+        alertDialogBuilder.setMessage("Go to Homepage?");
+        alertDialogBuilder.setCancelable(false);
+        alertDialogBuilder.setPositiveButton("Home", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent z = new Intent(ResultDisplay.this, HomeScreen.class);
+                startActivity(z);
+                finish();
+            }
+        });
+        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(ResultDisplay.this, "Exit cancelled", Toast.LENGTH_LONG).show();
+            }
+        });
+        AlertDialog alertDialog=alertDialogBuilder.create();
+        alertDialog.show();
     }
 }
