@@ -32,18 +32,34 @@
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/drawable/clean_bg.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/drawable/fill_button.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/drawable/green_fill.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/drawable/indicator_default.xml" value="0.1" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/drawable/indicator_selected.xml" value="0.1" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/drawable/indicator_selector.xml" value="0.1" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/drawable/layout.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/drawable/log_button.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/drawable/onboarding_activity_ic_waves_1.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/drawable/onboarding_activity_ic_waves_2.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/drawable/onboarding_activity_ic_waves_3.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/drawable/onboarding_activity_ic_waves_4.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_about_us.xml" value="0.25" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_display_user.xml" value="0.25" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_gen_qr.xml" value="0.22" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_intro_view_pager_adapter.xml" value="0.2" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_obs.xml" value="0.2" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_onboarding.xml" value="0.33132010353753233" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_onboarding_adapter.xml" value="0.2" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_onboarding_screen.xml" value="0.2" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_other_details.xml" value="0.22" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_scan_gallery.xml" value="0.25" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_scan_options.xml" value="0.1743659420289855" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_scan_user_qr.xml" value="0.22" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_ss.xml" value="0.1693840579710145" />
-        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_user_details.xml" value="0.22" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_user_details.xml" value="0.18" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/activity_user_qr.xml" value="0.22" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/layout_screen.xml" value="0.2" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/onboarding_1.xml" value="0.2" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/onboarding_2.xml" value="0.2" />
+        <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/slides_layout.xml" value="0.2" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/menu/popup_menu.xml" value="0.2" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/xml/provider_paths.xml" value="0.2" />
       </map>

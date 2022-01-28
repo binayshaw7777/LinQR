@@ -3,7 +3,6 @@ package com.geeeky.linqr;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -11,10 +10,8 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Point;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Display;
@@ -24,10 +21,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.google.zxing.WriterException;
-import java.io.File;
-import java.io.FileOutputStream;
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 
@@ -141,12 +135,10 @@ public class GenerateQR extends AppCompatActivity {
                 if(Build.VERSION.SDK_INT>=23){
                     if(checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
                         shareQrCode();
-                    }
-                    else{
+                    } else {
                         requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,FILE_SHARE_PERMISSION);
                     }
-                }
-                else{
+                } else{
                     shareQrCode();
                 }
             }

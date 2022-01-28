@@ -150,8 +150,8 @@
 
     <Button
         android:id="@+id/next"
-        android:layout_width="143dp"
-        android:layout_height="52dp"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/green_fill"
         android:fontFamily="@font/montserrat"

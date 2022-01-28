@@ -1,20 +1,13 @@
 package com.geeeky.linqr;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
@@ -31,7 +24,6 @@ public class Scanner extends AppCompatActivity{
 
     CodeScanner codeScanner;
     CodeScannerView scannView;
-   // Button Gallery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,16 +32,6 @@ public class Scanner extends AppCompatActivity{
         scannView = findViewById(R.id.scannerView);
         getSupportActionBar().hide();
         codeScanner = new CodeScanner(this,scannView);
-//        Gallery = findViewById(R.id.gal);
-//
-//        Gallery.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(Scanner.this, Scan_Gallery.class);
-//                startActivity(i);
-//                finish();
-//            }
-//        });
 
         codeScanner.setDecodeCallback(new DecodeCallback() {
             @Override
@@ -58,9 +40,7 @@ public class Scanner extends AppCompatActivity{
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        //resultData.setText(result.getText());
                         final String Rawresult = result.getText();
-                        //try{
                         String backup = Rawresult.substring(0,16);
                         if(backup.compareTo("http://instagram")==0){
                             String[] split = Rawresult.split("[\\s?]+");

@@ -2,8 +2,6 @@ package com.geeeky.linqr;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,9 +18,7 @@ import android.widget.Toast;
 public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     TextView Name, Num;
-   // CardView userQR, ScanUser;
     Button userQR, ScanUser, Gallery, Logout;
-    //Button Pick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +33,6 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
         Num = findViewById(R.id.num);
         userQR = findViewById(R.id.user_qr);
         ScanUser = findViewById(R.id.scan_user);
-        //Pick = findViewById(R.id.pick);
         Gallery = findViewById(R.id.gal);
         Logout = findViewById(R.id.logout);
 
@@ -54,6 +49,7 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
                 preferences3.edit().remove("save").commit();
                 editor2.apply();
                 editor3.apply();
+                sp.edit().clear().clear().apply();
                 Intent d = new Intent(HomeScreen.this, Login.class);
                 startActivity(d);
                 finishAffinity();
@@ -68,7 +64,6 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
                 finish();
             }
         });
-
 
         String name=sp.getString("saved_name", "");
         String num=sp.getString("saved_num", "");
@@ -85,15 +80,6 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
             }
         });
 
-/*        Pick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeScreen.this, Scan_Gallery.class);
-                startActivity(intent);
-                finish();
-            }
-        });*/
-
         userQR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,6 +89,7 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
             }
         });
     }
+
     public void onBackPressed(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
@@ -125,6 +112,7 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
         AlertDialog alertDialog=alertDialogBuilder.create();
         alertDialog.show();
     }
+
     public  void showPopup(View v){
         PopupMenu popupMenu = new PopupMenu(this, v);
         popupMenu.setOnMenuItemClickListener(this);
@@ -154,22 +142,6 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
                 startActivity(c);
                 finishAffinity();
                 break;
-
-//            case R.id.Reset:
-//                SharedPreferences preferences2 = getSharedPreferences("checkbox", MODE_PRIVATE);
-//                SharedPreferences preferences3 = getSharedPreferences("save", MODE_PRIVATE);
-//                SharedPreferences.Editor editor2 = preferences2.edit();
-//                SharedPreferences.Editor editor3 = preferences3.edit();
-//                editor2.putString("remember", "false");
-//                editor3.putString("save1", "false");
-//                preferences2.edit().remove("checkbox").commit();
-//                preferences3.edit().remove("save").commit();
-//                editor2.apply();
-//                editor3.apply();
-//                Intent d = new Intent(HomeScreen.this, Login.class);
-//                startActivity(d);
-//                finishAffinity();
-//                break;
 
             case R.id.About_us:
                 Intent a = new Intent(HomeScreen.this, About_us.class);

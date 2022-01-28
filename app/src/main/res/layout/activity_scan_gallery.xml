@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/home"
-        android:layout_width="130dp"
+        android:layout_width="330dp"
         android:layout_height="50dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/black_border"
@@ -55,7 +55,7 @@
 
     <Button
         android:id="@+id/connect"
-        android:layout_width="130dp"
+        android:layout_width="330dp"
         android:layout_height="50dp"
         android:layout_marginTop="68dp"
         android:background="@drawable/black_fill"

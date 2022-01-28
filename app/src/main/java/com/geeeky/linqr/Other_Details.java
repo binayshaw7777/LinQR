@@ -1,15 +1,12 @@
 package com.geeeky.linqr;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -18,7 +15,6 @@ public class Other_Details extends AppCompatActivity {
     SharedPreferences sp;
     EditText Twitter, Insta, Linkedin, Discord, Facebook, Github;
     Button Cont;
-  //  CheckBox save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +29,6 @@ public class Other_Details extends AppCompatActivity {
         Github = findViewById(R.id.git);
         Insta = findViewById(R.id.instagram);
         Cont = findViewById(R.id.next);
-       // save = findViewById(R.id.save);
-
         sp = getSharedPreferences("other_details", Context.MODE_PRIVATE);
 
         SharedPreferences preferences = getSharedPreferences("save",MODE_PRIVATE);
@@ -43,40 +37,13 @@ public class Other_Details extends AppCompatActivity {
             Intent intent = new Intent(Other_Details.this, HomeScreen.class);
             startActivity(intent);
         }
-        /*else if (checkbox.equals("false")){
-            Toast.makeText(this, "Please Enter Details", Toast.LENGTH_SHORT).show();
-        }*/
-
-        /*if(Twitter.length()==0){
-            Twitter.setText("NULL");
-        }
-        if(Discord.length()==0){
-            Discord.setText("NULL");
-        }
-        if(Facebook.length()==0){
-            Facebook.setText("NULL");
-        }
-        if(Linkedin.length()==0){
-            Linkedin.setText("NULL");
-        }
-        if(Github.length()==0){
-            Github.setText("NULL");
-        }
-        if(Insta.length()==0){
-            Insta.setText("NULL");
-        }*/
-
-        /*if(Discord.toString()==""){
-            Discord.setText("NULL");
-        }*/
-
         Cont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    SharedPreferences preferences = getSharedPreferences("save",MODE_PRIVATE);
-                    SharedPreferences.Editor editor1 = preferences.edit();
-                    editor1.putString("save1","true");
-                    editor1.apply();
+                SharedPreferences preferences = getSharedPreferences("save",MODE_PRIVATE);
+                SharedPreferences.Editor editor1 = preferences.edit();
+                editor1.putString("save1","true");
+                editor1.apply();
                 String txt_Insta = Insta.getText().toString().toLowerCase();
                 String txt_Li = Linkedin.getText().toString().toLowerCase();
                 String txt_Fb = Facebook.getText().toString().toLowerCase();
@@ -96,6 +63,6 @@ public class Other_Details extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-            });
+        });
     }
 }
