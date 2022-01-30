@@ -1,4 +1,4 @@
-package com.geeeky.linqr;
+package com.geeeky.linqr.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.geeeky.linqr.R;
 
 public class About_us extends AppCompatActivity {
 

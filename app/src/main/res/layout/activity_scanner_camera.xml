@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Scanner">
+    tools:context=".QR.Scanner_Camera">
 
     <com.budiyev.android.codescanner.CodeScannerView
         android:id="@+id/scannerView"

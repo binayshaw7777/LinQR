@@ -1,4 +1,4 @@
-package com.geeeky.linqr;
+package com.geeeky.linqr.Main;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.geeeky.linqr.QR.Scanner_Camera;
+import com.geeeky.linqr.R;
+
 public class ResultDisplay extends AppCompatActivity {
 
     TextView Name_Dis, Number_Dis, Email_Dis;
@@ -25,7 +28,7 @@ public class ResultDisplay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_display_user);
+        setContentView(R.layout.activity_result_display);
 
         Number_Dis = findViewById(R.id.number);
         Name_Dis = findViewById(R.id.dis_name);
@@ -187,7 +190,7 @@ public class ResultDisplay extends AppCompatActivity {
         Rescan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent resc = new Intent(ResultDisplay.this, Scanner.class);
+                Intent resc = new Intent(ResultDisplay.this, Scanner_Camera.class);
                 startActivity(resc);
                 finishAffinity();
             }

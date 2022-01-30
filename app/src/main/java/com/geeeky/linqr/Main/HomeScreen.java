@@ -1,4 +1,4 @@
-package com.geeeky.linqr;
+package com.geeeky.linqr.Main;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,12 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.geeeky.linqr.QR.Generate_QR;
+import com.geeeky.linqr.Login.Login;
+import com.geeeky.linqr.R;
+import com.geeeky.linqr.QR.Scanner_Gallery;
+import com.geeeky.linqr.QR.Scanner_Camera;
+
 public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     TextView Name, Num;
@@ -25,7 +31,7 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_gen_qr);
+        setContentView(R.layout.activity_homescreen);
 
         SharedPreferences sp = getApplicationContext().getSharedPreferences("user_details", Context.MODE_PRIVATE);
 
@@ -59,7 +65,7 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
         Gallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeScreen.this, Scan_Gallery.class);
+                Intent i = new Intent(HomeScreen.this, Scanner_Gallery.class);
                 startActivity(i);
                 finish();
             }
@@ -74,7 +80,7 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
         ScanUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeScreen.this, Scanner.class);
+                Intent intent = new Intent(HomeScreen.this, Scanner_Camera.class);
                 startActivity(intent);
                 finish();
             }
@@ -83,7 +89,7 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
         userQR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeScreen.this, GenerateQR.class);
+                Intent intent = new Intent(HomeScreen.this, Generate_QR.class);
                 startActivity(intent);
                 finish();
             }

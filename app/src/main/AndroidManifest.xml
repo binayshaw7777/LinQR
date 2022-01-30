@@ -18,11 +18,11 @@
         android:theme="@style/Theme.LinQR"
         tools:replace="android:allowBackup">
         <activity
-            android:name=".IntroViewPagerAdapter"
+            android:name=".Intro.IntroViewPagerAdapter"
             android:exported="true"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".Onboarding"
+            android:name=".Intro.Onboarding"
             android:exported="true" />
 
         <provider
@@ -36,28 +36,28 @@
         </provider>
 
         <activity
-            android:name=".Other_Details"
+            android:name=".Login.Login_Socials"
             android:exported="true" />
         <activity
-            android:name=".Scan_Gallery"
+            android:name=".QR.Scanner_Gallery"
             android:exported="true" />
         <activity
-            android:name=".About_us"
+            android:name=".Main.About_us"
             android:exported="true" />
         <activity
-            android:name=".ResultDisplay"
+            android:name=".Main.ResultDisplay"
             android:exported="true" />
         <activity
-            android:name=".Scanner"
+            android:name=".QR.Scanner_Camera"
             android:exported="true" />
         <activity
-            android:name=".GenerateQR"
+            android:name=".QR.Generate_QR"
             android:exported="true" />
         <activity
-            android:name=".Login"
+            android:name=".Login.Login"
             android:exported="true" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".Intro.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -66,7 +66,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeScreen"
+            android:name=".Main.HomeScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

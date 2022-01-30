@@ -1,4 +1,4 @@
-package com.geeeky.linqr;
+package com.geeeky.linqr.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
@@ -10,7 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Other_Details extends AppCompatActivity {
+import com.geeeky.linqr.Main.HomeScreen;
+import com.geeeky.linqr.R;
+
+public class Login_Socials extends AppCompatActivity {
 
     SharedPreferences sp;
     EditText Twitter, Insta, Linkedin, Discord, Facebook, Github;
@@ -20,7 +23,7 @@ public class Other_Details extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_other_details);
+        setContentView(R.layout.activity_login_socials);
 
         Twitter = findViewById(R.id.twitter);
         Discord = findViewById(R.id.dis2);
@@ -34,7 +37,7 @@ public class Other_Details extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("save",MODE_PRIVATE);
         String checkbox1 = preferences.getString("save1","");
         if (checkbox1.equals("true")){
-            Intent intent = new Intent(Other_Details.this, HomeScreen.class);
+            Intent intent = new Intent(Login_Socials.this, HomeScreen.class);
             startActivity(intent);
         }
         Cont.setOnClickListener(new View.OnClickListener() {
@@ -58,8 +61,8 @@ public class Other_Details extends AppCompatActivity {
                 editor.putString("saved_Twit", txt_twitter);
                 editor.putString("saved_Dis", dis);
                 editor.commit();
-                Toast.makeText(Other_Details.this, "Saved Successfully!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Other_Details.this, HomeScreen.class);
+                Toast.makeText(Login_Socials.this, "Saved Successfully!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Login_Socials.this, HomeScreen.class);
                 startActivity(intent);
                 finish();
             }

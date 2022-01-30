@@ -1,4 +1,4 @@
-package com.geeeky.linqr;
+package com.geeeky.linqr.QR;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -21,11 +21,14 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.geeeky.linqr.Main.HomeScreen;
+import com.geeeky.linqr.R;
 import com.google.zxing.WriterException;
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 
-public class GenerateQR extends AppCompatActivity {
+public class Generate_QR extends AppCompatActivity {
 
     private static final int FILE_SHARE_PERMISSION = 102;
     Button back, save;
@@ -38,7 +41,7 @@ public class GenerateQR extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_user_qr);
+        setContentView(R.layout.activity_generate_qr);
 
         imageView = findViewById(R.id.iv_out);
         back = findViewById(R.id.button);
@@ -122,7 +125,7 @@ public class GenerateQR extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(GenerateQR.this, HomeScreen.class);
+                Intent intent = new Intent(Generate_QR.this, HomeScreen.class);
                 startActivity(intent);
                 finish();
             }
@@ -146,14 +149,14 @@ public class GenerateQR extends AppCompatActivity {
             private void shareQrCode() {
                 MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, name+"'s LinQR Code"
                         , null);
-                Toast.makeText(GenerateQR.this, "Successfully saved to gallery", Toast.LENGTH_SHORT)
+                Toast.makeText(Generate_QR.this, "Successfully saved to gallery", Toast.LENGTH_SHORT)
                         .show();
             }
         });
     }
 
     private boolean checkPermission(String permission) {
-        int result= ContextCompat.checkSelfPermission(GenerateQR.this,permission);
+        int result= ContextCompat.checkSelfPermission(Generate_QR.this,permission);
         if(result== PackageManager.PERMISSION_GRANTED){
             return true;
         }
@@ -162,17 +165,17 @@ public class GenerateQR extends AppCompatActivity {
         }
     }
     private void requestPermission(String permission1,int code){
-        if(ActivityCompat.shouldShowRequestPermissionRationale(GenerateQR.this,permission1)){
+        if(ActivityCompat.shouldShowRequestPermissionRationale(Generate_QR.this,permission1)){
 
         }
         else{
-            ActivityCompat.requestPermissions(GenerateQR.this,new String[]{permission1},code);
+            ActivityCompat.requestPermissions(Generate_QR.this,new String[]{permission1},code);
         }
     }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent x = new Intent(GenerateQR.this, HomeScreen.class);
+        Intent x = new Intent(Generate_QR.this, HomeScreen.class);
         startActivity(x);
         finishAffinity();
     }

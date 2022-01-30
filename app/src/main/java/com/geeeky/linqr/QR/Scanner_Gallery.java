@@ -1,4 +1,4 @@
-package com.geeeky.linqr;
+package com.geeeky.linqr.QR;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -12,6 +12,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.geeeky.linqr.Main.HomeScreen;
+import com.geeeky.linqr.R;
+import com.geeeky.linqr.Main.ResultDisplay;
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.LuminanceSource;
 import com.google.zxing.MultiFormatReader;
@@ -21,7 +25,7 @@ import com.google.zxing.common.HybridBinarizer;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-public class Scan_Gallery extends AppCompatActivity {
+public class Scanner_Gallery extends AppCompatActivity {
 
     private Button home, con;
     private TextView Soc, Lin;
@@ -32,7 +36,7 @@ public class Scan_Gallery extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_scan_gallery);
+        setContentView(R.layout.activity_scanner_gallery);
 
         home = findViewById(R.id.home);
         con = findViewById(R.id.connect);
@@ -43,7 +47,7 @@ public class Scan_Gallery extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Scan_Gallery.this, HomeScreen.class);
+                Intent intent = new Intent(Scanner_Gallery.this, HomeScreen.class);
                 startActivity(intent);
                 finishAffinity();
             }
@@ -123,29 +127,29 @@ public class Scan_Gallery extends AppCompatActivity {
                             }
                         });
                     } else {
-                        Intent i = new Intent(Scan_Gallery.this, ResultDisplay.class);
+                        Intent i = new Intent(Scanner_Gallery.this, ResultDisplay.class);
                         i.putExtra("decoded", Rawresult);
                         startActivity(i);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(Scan_Gallery.this, "Selected Image is not a QR Code!", Toast.LENGTH_SHORT).show();
-                    Intent inty = new Intent(Scan_Gallery.this, HomeScreen.class);
+                    Toast.makeText(Scanner_Gallery.this, "Selected Image is not a QR Code!", Toast.LENGTH_SHORT).show();
+                    Intent inty = new Intent(Scanner_Gallery.this, HomeScreen.class);
                     startActivity(inty);
                     finishAffinity();
                 }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
 
-                Toast.makeText(Scan_Gallery.this, "Something went wrong", Toast.LENGTH_LONG).show();
-                Intent intx = new Intent(Scan_Gallery.this, HomeScreen.class);
+                Toast.makeText(Scanner_Gallery.this, "Something went wrong", Toast.LENGTH_LONG).show();
+                Intent intx = new Intent(Scanner_Gallery.this, HomeScreen.class);
                 startActivity(intx);
                 finishAffinity();
             }
 
         } else {
-            Toast.makeText(Scan_Gallery.this, "You haven't picked Image",Toast.LENGTH_LONG).show();
-            Intent intz = new Intent(Scan_Gallery.this, HomeScreen.class);
+            Toast.makeText(Scanner_Gallery.this, "You haven't picked Image",Toast.LENGTH_LONG).show();
+            Intent intz = new Intent(Scanner_Gallery.this, HomeScreen.class);
             startActivity(intz);
             finishAffinity();
         }

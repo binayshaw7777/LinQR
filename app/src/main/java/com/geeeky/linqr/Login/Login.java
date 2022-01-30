@@ -1,4 +1,4 @@
-package com.geeeky.linqr;
+package com.geeeky.linqr.Login;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -18,6 +18,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.geeeky.linqr.R;
+
 
 public class Login extends AppCompatActivity {
 
@@ -33,7 +35,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_user_details);
+        setContentView(R.layout.activity_login);
 
         proceed = findViewById(R.id.cont);
         add = findViewById(R.id.imageView6);
@@ -46,7 +48,7 @@ public class Login extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
         String checkbox = preferences.getString("remember", "");
         if (checkbox.equals("true")) {
-            Intent intent = new Intent(Login.this, Other_Details.class);
+            Intent intent = new Intent(Login.this, Login_Socials.class);
             startActivity(intent);
         } else if (checkbox.equals("false")) {
             Toast.makeText(this, "Please Enter Details", Toast.LENGTH_SHORT).show();
@@ -112,7 +114,7 @@ public class Login extends AppCompatActivity {
             editor.putString("saved_email", txt_email);
             editor.apply();
             Toast.makeText(Login.this, "Saved Successfully!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(Login.this, Other_Details.class);
+            Intent intent = new Intent(Login.this, Login_Socials.class);
             startActivity(intent);
             finish();
         }

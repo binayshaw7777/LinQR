@@ -1,4 +1,4 @@
-package com.geeeky.linqr;
+package com.geeeky.linqr.QR;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
@@ -11,6 +11,9 @@ import android.widget.Toast;
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
+import com.geeeky.linqr.Main.HomeScreen;
+import com.geeeky.linqr.R;
+import com.geeeky.linqr.Main.ResultDisplay;
 import com.google.zxing.Result;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
@@ -20,7 +23,7 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 
-public class Scanner extends AppCompatActivity{
+public class Scanner_Camera extends AppCompatActivity{
 
     CodeScanner codeScanner;
     CodeScannerView scannView;
@@ -28,7 +31,7 @@ public class Scanner extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scan_user_qr);
+        setContentView(R.layout.activity_scanner_camera);
         scannView = findViewById(R.id.scannerView);
         getSupportActionBar().hide();
         codeScanner = new CodeScanner(this,scannView);
@@ -57,7 +60,7 @@ public class Scanner extends AppCompatActivity{
                             gotoUrl(Rawresult);
                         }
                         else{
-                            Intent i = new Intent(Scanner.this, ResultDisplay.class);
+                            Intent i = new Intent(Scanner_Camera.this, ResultDisplay.class);
                             i.putExtra("decoded", Rawresult);
                             startActivity(i);
                         }
@@ -92,7 +95,7 @@ public class Scanner extends AppCompatActivity{
 
             @Override
             public void onPermissionDenied(PermissionDeniedResponse response) {
-                Toast.makeText(Scanner.this, "Camera Permission is Required.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Scanner_Camera.this, "Camera Permission is Required.", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -108,7 +111,7 @@ public class Scanner extends AppCompatActivity{
     }
 
     public void onBackPressed(){
-        Intent y = new Intent(Scanner.this, HomeScreen.class);
+        Intent y = new Intent(Scanner_Camera.this, HomeScreen.class);
         startActivity(y);
         finishAffinity();
 }

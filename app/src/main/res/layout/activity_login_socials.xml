@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Other_Details"
+    tools:context=".Login.Login_Socials"
     android:background="#EAF5FF">
 
     <TextView
