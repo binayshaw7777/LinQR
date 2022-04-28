@@ -62,9 +62,21 @@
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/layout/slides_layout.xml" value="0.2" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/menu/popup_menu.xml" value="0.2" />
         <entry key="..\:/Users/binay/StudioProjects/LinQR/app/src/main/res/xml/provider_paths.xml" value="0.2" />
+        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/drawable/black_fill.xml" value="0.209" />
+        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/drawable/blackgrad.xml" value="0.209" />
+        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/drawable/buttondrawable.xml" value="0.209" />
+        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/drawable/card.xml" value="0.1945" />
+        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/drawable/indicator_selected.xml" value="0.1855" />
+        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/drawable/indicator_selector.xml" value="0.1855" />
+        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/drawable/next_btn.xml" value="0.1855" />
+        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/layout/activity_about_us.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/layout/activity_display_user.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/layout/activity_gen_qr.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/layout/activity_onboarding.xml" value="0.3888888888888889" />
+        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/layout/activity_generate_qr.xml" value="0.1675213675213675" />
+        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/layout/activity_homescreen.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/layout/activity_login.xml" value="0.18" />
+        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/layout/activity_login_socials.xml" value="0.1675213675213675" />
+        <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/layout/activity_onboarding.xml" value="0.22" />
         <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/layout/activity_other_details.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/layout/activity_scan_gallery.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vinay/StudioProjects/LinQR/app/src/main/res/layout/activity_scan_user_qr.xml" value="0.20416666666666666" />

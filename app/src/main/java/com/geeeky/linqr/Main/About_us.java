@@ -26,37 +26,37 @@ public class About_us extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_about_us);
 
-            Linktree = (Button) findViewById(R.id.link);
-            ConnectivityManager connectivityManager = (ConnectivityManager)
-                    getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        Linktree = (Button) findViewById(R.id.link);
+        ConnectivityManager connectivityManager = (ConnectivityManager)
+                getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
-            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
 
-            if(networkInfo==null || !networkInfo.isConnected() || !networkInfo.isAvailable())
-            {
-                Toast.makeText(About_us.this, "Not connected to internet!", Toast.LENGTH_SHORT).show();
+        if (networkInfo == null || !networkInfo.isConnected() || !networkInfo.isAvailable()) {
+            Toast.makeText(About_us.this, "Not connected to internet!", Toast.LENGTH_SHORT).show();
+        }
+
+        Linktree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoUrl("https://linktr.ee/GAMIX7");
             }
+        });
 
-            Linktree.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    gotoUrl("https://linktr.ee/GAMIX7");
-                }
-            });
+        Back = (Button) findViewById(R.id.back);
 
-            Back = (Button) findViewById(R.id.back);
-
-            Back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent  = new Intent(About_us.this, HomeScreen.class);
-                    startActivity(intent);
-                    finishAffinity();
-                }
-            });
-        }
-        private void gotoUrl(String s) {
-            Uri uri = Uri.parse(s);
-            startActivity(new Intent(Intent.ACTION_VIEW,uri));
-        }
+        Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(About_us.this, HomeScreen.class);
+                startActivity(intent);
+                finishAffinity();
+            }
+        });
     }
+
+    private void gotoUrl(String s) {
+        Uri uri = Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW, uri));
+    }
+}

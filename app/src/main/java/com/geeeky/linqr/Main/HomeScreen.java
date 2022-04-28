@@ -2,6 +2,7 @@ package com.geeeky.linqr.Main;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -25,6 +26,7 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
 
     TextView Name, Num;
     Button userQR, ScanUser, Gallery, Logout;
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +35,7 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
         getSupportActionBar().hide();
         setContentView(R.layout.activity_homescreen);
 
-        SharedPreferences sp = getApplicationContext().getSharedPreferences("user_details", Context.MODE_PRIVATE);
-
-        Name = findViewById(R.id.name);
-        Num = findViewById(R.id.num);
-        userQR = findViewById(R.id.user_qr);
-        ScanUser = findViewById(R.id.scan_user);
-        Gallery = findViewById(R.id.gal);
-        Logout = findViewById(R.id.logout);
+        initialization();
 
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,11 +66,11 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
             }
         });
 
-        String name=sp.getString("saved_name", "");
-        String num=sp.getString("saved_num", "");
+        String name = sp.getString("saved_name", "");
+        String num = sp.getString("saved_num", "");
 
-        Name.setText("Name: "+name);
-        Num.setText("Phone No: "+num);
+        Name.setText("Name: " + name);
+        Num.setText("Phone No: " + num);
 
         ScanUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +91,17 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
         });
     }
 
-    public void onBackPressed(){
+    private void initialization() {
+        sp = getApplicationContext().getSharedPreferences("user_details", Context.MODE_PRIVATE);
+        Name = findViewById(R.id.name);
+        Num = findViewById(R.id.num);
+        userQR = findViewById(R.id.user_qr);
+        ScanUser = findViewById(R.id.scan_user);
+        Gallery = findViewById(R.id.gal);
+        Logout = findViewById(R.id.logout);
+    }
+
+    public void onBackPressed() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         alertDialogBuilder.setTitle("Confirm Exit");
@@ -115,11 +120,11 @@ public class HomeScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
                 Toast.makeText(HomeScreen.this, "Exit cancelled", Toast.LENGTH_LONG).show();
             }
         });
-        AlertDialog alertDialog=alertDialogBuilder.create();
+        AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }
 
-    public  void showPopup(View v){
+    public void showPopup(View v) {
         PopupMenu popupMenu = new PopupMenu(this, v);
         popupMenu.setOnMenuItemClickListener(this);
         popupMenu.inflate(R.menu.popup_menu);

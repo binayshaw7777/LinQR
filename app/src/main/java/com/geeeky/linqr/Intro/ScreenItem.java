@@ -2,7 +2,7 @@ package com.geeeky.linqr.Intro;
 
 public class ScreenItem {
 
-    String Title,Description;
+    String Title, Description;
     int ScreenImg;
 
     public ScreenItem(String title, String description, int screenImg) {

@@ -1,6 +1,7 @@
 package com.geeeky.linqr.QR;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -22,6 +23,7 @@ import com.google.zxing.MultiFormatReader;
 import com.google.zxing.RGBLuminanceSource;
 import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
+
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
@@ -59,6 +61,7 @@ public class Scanner_Gallery extends AppCompatActivity {
 
 
     }
+
     @Override
     protected void onActivityResult(int reqCode, int resultCode, Intent data) {
         super.onActivityResult(reqCode, resultCode, data);
@@ -69,7 +72,7 @@ public class Scanner_Gallery extends AppCompatActivity {
                 final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
                 try {
                     Bitmap bMap = selectedImage;
-                    int[] intArray = new int[bMap.getWidth()*bMap.getHeight()];
+                    int[] intArray = new int[bMap.getWidth() * bMap.getHeight()];
                     bMap.getPixels(intArray, 0, bMap.getWidth(), 0, 0, bMap.getWidth(), bMap.getHeight());
 
                     LuminanceSource source = new RGBLuminanceSource(bMap.getWidth(), bMap.getHeight(), intArray);
@@ -79,8 +82,8 @@ public class Scanner_Gallery extends AppCompatActivity {
                     Result result = ((MultiFormatReader) reader).decode(bitmap);
 
                     final String Rawresult = result.getText();
-                    String backup = Rawresult.substring(0,16);
-                    if(backup.compareTo("http://instagram")==0){
+                    String backup = Rawresult.substring(0, 16);
+                    if (backup.compareTo("http://instagram") == 0) {
                         String[] split = Rawresult.split("[\\s?]+");
                         String instagram = split[0];
                         gotoUrl(instagram);
@@ -93,7 +96,7 @@ public class Scanner_Gallery extends AppCompatActivity {
                                 gotoUrl(Rawresult);
                             }
                         });
-                    } else if(backup.compareTo("https://wa.me/qr")==0){
+                    } else if (backup.compareTo("https://wa.me/qr") == 0) {
                         gotoUrl(Rawresult);
                         Soc.setText("WhatsApp Found");
                         change.setBackgroundResource(R.drawable.whatsapp);
@@ -104,7 +107,7 @@ public class Scanner_Gallery extends AppCompatActivity {
                                 gotoUrl(Rawresult);
                             }
                         });
-                    } else if(backup.compareTo("https://facebook")==0){
+                    } else if (backup.compareTo("https://facebook") == 0) {
                         gotoUrl(Rawresult);
                         Soc.setText("Facebook Found");
                         change.setBackgroundResource(R.drawable.facebook_high);
@@ -115,7 +118,7 @@ public class Scanner_Gallery extends AppCompatActivity {
                                 gotoUrl(Rawresult);
                             }
                         });
-                    } else if(backup.compareTo("https://twitter.")==0){
+                    } else if (backup.compareTo("https://twitter.") == 0) {
                         gotoUrl(Rawresult);
                         Soc.setText("Twitter Found");
                         change.setBackgroundResource(R.drawable.twitter_high);
@@ -148,7 +151,7 @@ public class Scanner_Gallery extends AppCompatActivity {
             }
 
         } else {
-            Toast.makeText(Scanner_Gallery.this, "You haven't picked Image",Toast.LENGTH_LONG).show();
+            Toast.makeText(Scanner_Gallery.this, "You haven't picked Image", Toast.LENGTH_LONG).show();
             Intent intz = new Intent(Scanner_Gallery.this, HomeScreen.class);
             startActivity(intz);
             finishAffinity();
@@ -157,6 +160,6 @@ public class Scanner_Gallery extends AppCompatActivity {
 
     private void gotoUrl(String s) {
         Uri uri = Uri.parse(s);
-        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+        startActivity(new Intent(Intent.ACTION_VIEW, uri));
     }
 }

@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login.Login"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
     android:layout_gravity="center"
     android:background="#EAF5FF">
 
@@ -13,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center_horizontal"
@@ -21,7 +23,7 @@
         android:textColor="@color/black"
         android:textSize="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,9 +45,12 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/email"
@@ -60,10 +65,12 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextPhone"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextPhone"
@@ -79,30 +86,35 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/cont"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/black_fill"
+        android:background="@drawable/blackgrad"
+        android:drawableRight="@drawable/next_16"
+        android:drawableTint="@color/white"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
+        android:onClick="LoginData"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
         android:text="Continue"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="15dp"
-        android:onClick="LoginData"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/checkBox"
-        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="@+id/checkBox"
         app:layout_constraintTop_toBottomOf="@+id/checkBox"
-        app:layout_constraintVertical_bias="0.656" />
+        app:layout_constraintVertical_bias="0.409" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -113,9 +125,12 @@
         android:gravity="center"
         android:text="Remember me"
         android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email">
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintVertical_bias="0.0">
 
     </CheckBox>
 
@@ -138,10 +153,10 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/user_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:background="@drawable/user_icon"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

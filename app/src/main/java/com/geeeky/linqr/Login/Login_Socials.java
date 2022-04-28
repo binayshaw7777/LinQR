@@ -1,6 +1,7 @@
 package com.geeeky.linqr.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,27 +26,16 @@ public class Login_Socials extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_login_socials);
 
-        Twitter = findViewById(R.id.twitter);
-        Discord = findViewById(R.id.dis2);
-        Facebook = findViewById(R.id.fb);
-        Linkedin = findViewById(R.id.li);
-        Github = findViewById(R.id.git);
-        Insta = findViewById(R.id.instagram);
-        Cont = findViewById(R.id.next);
-        sp = getSharedPreferences("other_details", Context.MODE_PRIVATE);
+        initialization();
 
-        SharedPreferences preferences = getSharedPreferences("save",MODE_PRIVATE);
-        String checkbox1 = preferences.getString("save1","");
-        if (checkbox1.equals("true")){
-            Intent intent = new Intent(Login_Socials.this, HomeScreen.class);
-            startActivity(intent);
-        }
+        rememberMeCheck();
+
         Cont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences preferences = getSharedPreferences("save",MODE_PRIVATE);
+                SharedPreferences preferences = getSharedPreferences("save", MODE_PRIVATE);
                 SharedPreferences.Editor editor1 = preferences.edit();
-                editor1.putString("save1","true");
+                editor1.putString("save1", "true");
                 editor1.apply();
                 String txt_Insta = Insta.getText().toString().toLowerCase();
                 String txt_Li = Linkedin.getText().toString().toLowerCase();
@@ -67,5 +57,25 @@ public class Login_Socials extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void rememberMeCheck() {
+        SharedPreferences preferences = getSharedPreferences("save", MODE_PRIVATE);
+        String checkbox1 = preferences.getString("save1", "");
+        if (checkbox1.equals("true")) {
+            Intent intent = new Intent(Login_Socials.this, HomeScreen.class);
+            startActivity(intent);
+        }
+    }
+
+    private void initialization() {
+        Twitter = findViewById(R.id.twitter);
+        Discord = findViewById(R.id.dis2);
+        Facebook = findViewById(R.id.fb);
+        Linkedin = findViewById(R.id.li);
+        Github = findViewById(R.id.git);
+        Insta = findViewById(R.id.instagram);
+        Cont = findViewById(R.id.next);
+        sp = getSharedPreferences("other_details", Context.MODE_PRIVATE);
     }
 }

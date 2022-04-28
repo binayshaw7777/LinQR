@@ -3,6 +3,7 @@ package com.geeeky.linqr.Main;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -30,27 +31,9 @@ public class ResultDisplay extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_result_display);
 
-        Number_Dis = findViewById(R.id.number);
-        Name_Dis = findViewById(R.id.dis_name);
-        toHome = findViewById(R.id.to_home);
-        Rescan = findViewById(R.id.rescan_user);
-        Add = findViewById(R.id.add_number);
-        Email_Dis = findViewById(R.id.email);
-        Add_insta = findViewById(R.id.instagram);
-        Add_LinkedIn = findViewById(R.id.Linkedin);
-        Add_Discord = findViewById(R.id.Discord);
-        Add_Facebook = findViewById(R.id.Facebook);
-        Add_Github = findViewById(R.id.Github);
-        Add_Twitter = findViewById(R.id.Twitter);
+        initialization();
 
-        Intent newInt = getIntent();
-        String num = newInt.getExtras().getString("decoded");
-        char[] dec = num.toCharArray();
-        String decrypt = "";
-        for(char c : dec){
-            c-=5;
-            decrypt+=c;
-        }
+        String decrypt = decryption();
 
         String[] split = decrypt.split(":");
         String name_display = split[0]; //name
@@ -64,27 +47,25 @@ public class ResultDisplay extends AppCompatActivity {
         String git = split[8]; //Github
 
 
+        String Insta_To_Site = "https://www.instagram.com/" + insta;
+        String LinkedIn_To_Site = "https://www.linkedin.com/in/" + linkedin;
+        String Discord_To_Site = "https://discordapp.com/users/" + discord;
+        String Twitter_To_Site = "https://twitter.com/" + twitter;
+        String GitHub_To_Site = "https://www.github.com/" + git;
+        String Facebook_To_Site = "https://www.facebook.com/" + fb;
 
-        String Insta_To_Site = "https://www.instagram.com/"+insta;
-        String LinkedIn_To_Site = "https://www.linkedin.com/in/"+linkedin;
-        String Discord_To_Site = "https://discordapp.com/users/"+discord;
-        String Twitter_To_Site = "https://twitter.com/"+twitter;
-        String GitHub_To_Site = "https://www.github.com/"+git;
-        String Facebook_To_Site = "https://www.facebook.com/"+fb;
+        Name_Dis.setText("Name: " + name_display);
+        Number_Dis.setText("Phone: " + number_display);
+        Email_Dis.setText("Email: " + email_display);
 
-        Name_Dis.setText("Name: "+name_display);
-        Number_Dis.setText("Phone: "+number_display);
-        Email_Dis.setText("Email: "+email_display);
-
-        if(insta.equals("NULL")){
+        if (insta.equals("NULL")) {
             Add_insta.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(ResultDisplay.this, "Instagram was not Added by user!", Toast.LENGTH_SHORT).show();
                 }
             });
-        }
-        else{
+        } else {
             Add_insta.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -93,15 +74,14 @@ public class ResultDisplay extends AppCompatActivity {
             });
         }
 
-        if(discord.equals("NULL")){
+        if (discord.equals("NULL")) {
             Add_Discord.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(ResultDisplay.this, "Discord was not Added by user!", Toast.LENGTH_SHORT).show();
                 }
             });
-        }
-        else{
+        } else {
             Add_Discord.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -110,15 +90,14 @@ public class ResultDisplay extends AppCompatActivity {
             });
         }
 
-        if(fb.equals("NULL")){
+        if (fb.equals("NULL")) {
             Add_Facebook.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(ResultDisplay.this, "Facebook was not Added by user!", Toast.LENGTH_SHORT).show();
                 }
             });
-        }
-        else{
+        } else {
             Add_Facebook.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -127,15 +106,14 @@ public class ResultDisplay extends AppCompatActivity {
             });
         }
 
-        if(git.equals("NULL")){
+        if (git.equals("NULL")) {
             Add_Github.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(ResultDisplay.this, "Github was not Added by user!", Toast.LENGTH_SHORT).show();
                 }
             });
-        }
-        else{
+        } else {
             Add_Github.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -144,15 +122,14 @@ public class ResultDisplay extends AppCompatActivity {
             });
         }
 
-        if(twitter.equals("NULL")){
+        if (twitter.equals("NULL")) {
             Add_Twitter.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(ResultDisplay.this, "Twitter was not Added by user!", Toast.LENGTH_SHORT).show();
                 }
             });
-        }
-        else{
+        } else {
             Add_Twitter.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -161,15 +138,14 @@ public class ResultDisplay extends AppCompatActivity {
             });
         }
 
-        if(linkedin.equals("NULL")){
+        if (linkedin.equals("NULL")) {
             Add_LinkedIn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(ResultDisplay.this, "LinkedIn was not added by the user!", Toast.LENGTH_SHORT).show();
                 }
             });
-        }
-        else {
+        } else {
             Add_LinkedIn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -209,12 +185,39 @@ public class ResultDisplay extends AppCompatActivity {
         });
     }
 
-    private void gotoUrl(String s) {
-        Uri uri = Uri.parse(s);
-        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+    private String decryption() {
+        Intent newInt = getIntent();
+        String num = newInt.getExtras().getString("decoded");
+        char[] dec = num.toCharArray();
+        String decrypt = "";
+        for (char c : dec) {
+            c -= 5;
+            decrypt += c;
+        }
+        return decrypt;
     }
 
-    public void onBackPressed(){
+    private void initialization() {
+        Number_Dis = findViewById(R.id.number);
+        Name_Dis = findViewById(R.id.dis_name);
+        toHome = findViewById(R.id.to_home);
+        Rescan = findViewById(R.id.rescan_user);
+        Add = findViewById(R.id.add_number);
+        Email_Dis = findViewById(R.id.email);
+        Add_insta = findViewById(R.id.instagram);
+        Add_LinkedIn = findViewById(R.id.Linkedin);
+        Add_Discord = findViewById(R.id.Discord);
+        Add_Facebook = findViewById(R.id.Facebook);
+        Add_Github = findViewById(R.id.Github);
+        Add_Twitter = findViewById(R.id.Twitter);
+    }
+
+    private void gotoUrl(String s) {
+        Uri uri = Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW, uri));
+    }
+
+    public void onBackPressed() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         alertDialogBuilder.setTitle("Back to Home");
@@ -235,7 +238,7 @@ public class ResultDisplay extends AppCompatActivity {
                 Toast.makeText(ResultDisplay.this, "Exit cancelled", Toast.LENGTH_LONG).show();
             }
         });
-        AlertDialog alertDialog=alertDialogBuilder.create();
+        AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }
 }

@@ -3,6 +3,7 @@ package com.geeeky.linqr.QR;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -25,6 +26,7 @@ import android.widget.Toast;
 import com.geeeky.linqr.Main.HomeScreen;
 import com.geeeky.linqr.R;
 import com.google.zxing.WriterException;
+
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 
@@ -50,42 +52,42 @@ public class Generate_QR extends AppCompatActivity {
         SharedPreferences sp = getApplicationContext().getSharedPreferences("user_details", Context.MODE_PRIVATE);
         SharedPreferences sp1 = getApplicationContext().getSharedPreferences("other_details", Context.MODE_PRIVATE);
 
-        String name=sp.getString("saved_name", "");
-        String num=sp.getString("saved_num", "");
-        String email=sp.getString("saved_email", "");
-        String Insta=sp1.getString("saved_Insta", "");
-        String Linkedin=sp1.getString("saved_Li", "");
-        String Dis=sp1.getString("saved_Dis", "");
-        String Git=sp1.getString("saved_Git", "");
-        String Twit=sp1.getString("saved_Twit", "");
-        String Fb=sp1.getString("saved_Fb", "");
+        String name = sp.getString("saved_name", "");
+        String num = sp.getString("saved_num", "");
+        String email = sp.getString("saved_email", "");
+        String Insta = sp1.getString("saved_Insta", "");
+        String Linkedin = sp1.getString("saved_Li", "");
+        String Dis = sp1.getString("saved_Dis", "");
+        String Git = sp1.getString("saved_Git", "");
+        String Twit = sp1.getString("saved_Twit", "");
+        String Fb = sp1.getString("saved_Fb", "");
 
-        if(Linkedin.isEmpty()){
-            Linkedin="NULL";
+        if (Linkedin.isEmpty()) {
+            Linkedin = "NULL";
         }
-        if(Insta.isEmpty()){
-            Insta="NULL";
+        if (Insta.isEmpty()) {
+            Insta = "NULL";
         }
-        if(Dis.isEmpty()){
-            Dis="NULL";
+        if (Dis.isEmpty()) {
+            Dis = "NULL";
         }
-        if(Twit.isEmpty()){
-            Twit="NULL";
+        if (Twit.isEmpty()) {
+            Twit = "NULL";
         }
-        if(Fb.isEmpty()){
-            Fb="NULL";
+        if (Fb.isEmpty()) {
+            Fb = "NULL";
         }
-        if(Git.isEmpty()){
-            Git="NULL";
+        if (Git.isEmpty()) {
+            Git = "NULL";
         }
 
-        String qr = name+":"+num+":"+email+":"+Insta+":"+Linkedin+":"+Dis+":"+Twit+":"+Fb+":"+Git;
+        String qr = name + ":" + num + ":" + email + ":" + Insta + ":" + Linkedin + ":" + Dis + ":" + Twit + ":" + Fb + ":" + Git;
         String fin = "";
 
         char[] ch = qr.toCharArray();
-        for(char c : ch){
-            c+=5;
-            fin+=c;
+        for (char c : ch) {
+            c += 5;
+            fin += c;
         }
 
         WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
@@ -104,7 +106,7 @@ public class Generate_QR extends AppCompatActivity {
         int height = point.y;
 
         // generating dimension from width and height.
-        int dimen = width < height ? width : height;
+        int dimen = Math.min(width, height);
         dimen = dimen * 3 / 4;
 
         // setting this dimensions inside our qr code
@@ -135,19 +137,19 @@ public class Generate_QR extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                if(Build.VERSION.SDK_INT>=23){
-                    if(checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+                if (Build.VERSION.SDK_INT >= 23) {
+                    if (checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                         shareQrCode();
                     } else {
-                        requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,FILE_SHARE_PERMISSION);
+                        requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, FILE_SHARE_PERMISSION);
                     }
-                } else{
+                } else {
                     shareQrCode();
                 }
             }
 
             private void shareQrCode() {
-                MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, name+"'s LinQR Code"
+                MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, name + "'s LinQR Code"
                         , null);
                 Toast.makeText(Generate_QR.this, "Successfully saved to gallery", Toast.LENGTH_SHORT)
                         .show();
@@ -156,22 +158,18 @@ public class Generate_QR extends AppCompatActivity {
     }
 
     private boolean checkPermission(String permission) {
-        int result= ContextCompat.checkSelfPermission(Generate_QR.this,permission);
-        if(result== PackageManager.PERMISSION_GRANTED){
-            return true;
-        }
-        else{
-            return false;
-        }
+        int result = ContextCompat.checkSelfPermission(Generate_QR.this, permission);
+        return result == PackageManager.PERMISSION_GRANTED;
     }
-    private void requestPermission(String permission1,int code){
-        if(ActivityCompat.shouldShowRequestPermissionRationale(Generate_QR.this,permission1)){
 
-        }
-        else{
-            ActivityCompat.requestPermissions(Generate_QR.this,new String[]{permission1},code);
+    private void requestPermission(String permission1, int code) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(Generate_QR.this, permission1)) {
+
+        } else {
+            ActivityCompat.requestPermissions(Generate_QR.this, new String[]{permission1}, code);
         }
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();

@@ -2,12 +2,14 @@ package com.geeeky.linqr.QR;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
+
 import android.Manifest;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
@@ -23,55 +25,48 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 
-public class Scanner_Camera extends AppCompatActivity{
+public class Scanner_Camera extends AppCompatActivity {
 
     CodeScanner codeScanner;
-    CodeScannerView scannView;
+    CodeScannerView scanView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner_camera);
-        scannView = findViewById(R.id.scannerView);
+        scanView = findViewById(R.id.scannerView);
         getSupportActionBar().hide();
-        codeScanner = new CodeScanner(this,scannView);
+        codeScanner = new CodeScanner(this, scanView);
 
         codeScanner.setDecodeCallback(new DecodeCallback() {
             @Override
             public void onDecoded(@NonNull final Result result) {
-
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         final String Rawresult = result.getText();
-                        String backup = Rawresult.substring(0,16);
-                        if(backup.compareTo("http://instagram")==0){
+                        String backup = Rawresult.substring(0, 16);
+                        if (backup.compareTo("http://instagram") == 0) {
                             String[] split = Rawresult.split("[\\s?]+");
                             String instagram = split[0];
                             gotoUrl(instagram);
-                        }
-                        else if(backup.compareTo("https://wa.me/qr")==0){
+                        } else if (backup.compareTo("https://wa.me/qr") == 0) {
                             gotoUrl(Rawresult);
-                        }
-                        else if(backup.compareTo("https://facebook")==0){
+                        } else if (backup.compareTo("https://facebook") == 0) {
                             gotoUrl(Rawresult);
-                        }
-                        else if(backup.compareTo("https://twitter.")==0){
+                        } else if (backup.compareTo("https://twitter.") == 0) {
                             gotoUrl(Rawresult);
-                        }
-                        else{
+                        } else {
                             Intent i = new Intent(Scanner_Camera.this, ResultDisplay.class);
                             i.putExtra("decoded", Rawresult);
                             startActivity(i);
                         }
                     }
                 });
-
             }
         });
 
-
-        scannView.setOnClickListener(new View.OnClickListener() {
+        scanView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 codeScanner.startPreview();
@@ -83,7 +78,6 @@ public class Scanner_Camera extends AppCompatActivity{
     protected void onResume() {
         super.onResume();
         requestForCamera();
-
     }
 
     public void requestForCamera() {
@@ -105,14 +99,15 @@ public class Scanner_Camera extends AppCompatActivity{
             }
         }).check();
     }
+
     private void gotoUrl(String s) {
         Uri uri = Uri.parse(s);
-        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+        startActivity(new Intent(Intent.ACTION_VIEW, uri));
     }
 
-    public void onBackPressed(){
+    public void onBackPressed() {
         Intent y = new Intent(Scanner_Camera.this, HomeScreen.class);
         startActivity(y);
         finishAffinity();
-}
+    }
 }
